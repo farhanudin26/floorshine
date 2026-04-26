@@ -265,22 +265,6 @@ section { padding: 72px 0; }
 .faq-item.open .faq-a { display: block; }
 
 /* ============================================================
-   CONTACT BOTTOM
-   ============================================================ */
-.contact-bottom { background: var(--gray-50); }
-.contact-bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.cb-info h2 { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #35adb5; margin-bottom: 24px; line-height: 1.25; }
-.cb-info h2 span { display: block; color: var(--navy); font-size: 16px; font-weight: 600; margin-top: 4px; }
-.cb-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
-.cb-icon { width: 40px; height: 40px; background: #e8f7f8; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #35adb5; font-size: 16px; flex-shrink: 0; }
-.cb-label { font-size: 11.5px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
-.cb-val { font-size: 14.5px; color: var(--gray-800); font-weight: 500; }
-.cb-val a { color: #35adb5; text-decoration: none; font-weight: 600; }
-.cb-val a:hover { text-decoration: underline; }
-.cb-map { border-radius: 16px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.09); border: 2px solid var(--gray-200); }
-.cb-map iframe { width: 100%; height: 320px; border: none; display: block; }
-
-/* ============================================================
    OTHER SERVICES
    ============================================================ */
 .other-services-section { background: #fff; padding: 56px 0; }
@@ -565,42 +549,6 @@ section { padding: 72px 0; }
                     <div class="faq-a">
                         After polishing, make sure to keep the floor dry and avoid sweeping or mopping regularly with a soft tool (such as a microfibre mop). Avoid using strong cleaning agents or cleaners that may damage the polished surface. Also consider using mats and use foot protectors under furniture to avoid scratches.
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- CONTACT BOTTOM --}}
-<section class="contact-bottom" id="quote">
-    <div class="container">
-        <div class="contact-bottom-grid">
-            <div class="cb-info">
-                <h2>Floorshine | Floor Polishing<span>Singapore</span></h2>
-                <div class="cb-item">
-                    <div class="cb-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div><div class="cb-label">Address</div><div class="cb-val">18 Sin Ming Ln, #06-27, Midview City<br>Singapore 573960</div></div>
-                </div>
-                <div class="cb-item">
-                    <div class="cb-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div><div class="cb-label">WhatsApp</div><div class="cb-val"><a href="https://wa.me/6588772899" target="_blank">+65 8877 2899</a></div></div>
-                </div>
-                <div class="cb-item">
-                    <div class="cb-icon"><i class="fas fa-envelope"></i></div>
-                    <div><div class="cb-label">Email</div><div class="cb-val"><a href="mailto:enquiry@floorpolishing.sg">enquiry@floorpolishing.sg</a></div></div>
-                </div>
-                <div class="cb-item">
-                    <div class="cb-icon"><i class="fas fa-clock"></i></div>
-                    <div><div class="cb-label">Operating Hours</div><div class="cb-val">Mon – Fri: 9:00 am – 6:00 pm</div></div>
-                </div>
-            </div>
-            {{-- CATATAN GOOGLE MAPS: Ganti src dengan embed URL lokasi bisnis asli --}}
-            <div>
-                <div class="cb-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6704782073865!2d103.83018757499225!3d1.3493099986586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17057effffff%3A0x7efb5b33efba1e14!2sMidview%20City!5e0!3m2!1sen!2ssg!4v1700000000001!5m2!1sen!2ssg"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
                 </div>
             </div>
         </div>
