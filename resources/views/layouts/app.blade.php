@@ -6,7 +6,9 @@
     <title>@yield('title', 'Floorshine - Singapore Professional Floor Polishing')</title>
     <meta name="description" content="@yield('meta_description', 'Professional floor polishing services in Singapore for Marble, Granite, Parquet, and Tile flooring.')">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{-- ✅ PERUBAHAN 1: Ganti font ke Poppins --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,10 +25,17 @@
             --gray-400: #94A3B8;
             --gray-600: #475569;
             --gray-800: #1E293B;
-            --font-head: 'Plus Jakarta Sans', sans-serif;
-            --font-body: 'Outfit', sans-serif;
+            {{-- ✅ PERUBAHAN 2: Ubah variable font ke Poppins --}}
+            --font-head: 'Poppins', sans-serif;
+            --font-body: 'Poppins', sans-serif;
         }
 
+        /* Poppins untuk semua elemen teks — JANGAN pakai *::before *::after
+           karena akan menghilangkan icon Font Awesome */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, div,
+        ul, ol, li, td, th, label, input, textarea, select, button {
+            font-family: 'Poppins', sans-serif;
+        }
         body { font-family: var(--font-body); color: var(--gray-800); background: #fff; }
 
         /* ===== CONTAINER ===== */
@@ -193,7 +202,7 @@
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.12);
             border-radius: 8px; padding: 9px 12px;
-            font-size: 13px; font-family: var(--font-body);
+            font-size: 13px; font-family: 'Poppins', sans-serif;
             color: #fff; outline: none; transition: border-color 0.2s;
         }
         .enq-group input:focus, .enq-group select:focus, .enq-group textarea:focus { border-color: var(--teal); }
@@ -203,7 +212,7 @@
         .btn-enq-submit {
             background: var(--teal); color: #fff; border: none;
             padding: 10px 20px; border-radius: 8px; font-size: 13px;
-            font-weight: 700; font-family: var(--font-head);
+            font-weight: 700; font-family: 'Poppins', sans-serif;
             cursor: pointer; transition: background 0.2s; margin-top: 4px;
             display: inline-flex; align-items: center; gap: 6px;
         }
@@ -277,13 +286,7 @@
     {{-- NAVBAR --}}
     <nav class="navbar">
         <div class="container">
-            {{-- LOGO --}}
-            {{-- CATATAN: Sudah menggunakan gambar logo.
-                 Simpan logo di: public/images/logo-floorshine.png
-                 Jika logo belum ada, ganti dengan teks:
-                 <span style="font-family:var(--font-head);font-weight:800;font-size:22px;color:var(--teal);">
-                     FLOOR<span style="color:var(--navy);">SHINE</span>
-                 </span> --}}
+            {{-- CATATAN: Simpan logo di: public/images/logo-floorshine.png --}}
             <a href="{{ route('home') }}" class="logo">
                 <img src="{{ asset('images/logo-floorshine.png') }}" height="52" alt="Floorshine">
             </a>
@@ -336,21 +339,16 @@
     {{-- MAIN CONTENT --}}
     <main>@yield('content')</main>
 
-    {{-- ============================================================
-         GLOBAL CONTACT SECTION — tampil di semua halaman
-         ============================================================ --}}
+    {{-- GLOBAL CONTACT SECTION — tampil di semua halaman --}}
     <section class="global-contact" id="quote">
         <div class="container">
             <div class="global-contact-grid">
-
-                {{-- Info Kontak --}}
                 <div class="gc-info">
                     <h2>
                         Floorshine | Floor Polishing
                         <span>Singapore</span>
                     </h2>
                     <p>Contact us today for a free consultation and quote. Our team is ready to help restore the beauty of your floors.</p>
-
                     <div class="gc-item">
                         <div class="gc-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
@@ -358,7 +356,6 @@
                             <div class="gc-val">18 Sin Ming Lane, #06-27, Midview City<br>Singapore 573960</div>
                         </div>
                     </div>
-
                     <div class="gc-item">
                         <div class="gc-icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
@@ -366,7 +363,6 @@
                             <div class="gc-val"><a href="https://wa.me/6588772899" target="_blank">+65 8877 2899</a></div>
                         </div>
                     </div>
-
                     <div class="gc-item">
                         <div class="gc-icon"><i class="fas fa-envelope"></i></div>
                         <div>
@@ -374,7 +370,6 @@
                             <div class="gc-val"><a href="mailto:enquiry@floorpolishing.sg">enquiry@floorpolishing.sg</a></div>
                         </div>
                     </div>
-
                     <div class="gc-item">
                         <div class="gc-icon"><i class="fas fa-clock"></i></div>
                         <div>
@@ -383,32 +378,22 @@
                         </div>
                     </div>
                 </div>
-
-                {{-- Google Maps --}}
-                {{-- CATATAN GOOGLE MAPS:
-                     Ganti src di bawah dengan embed URL dari Google Maps lokasi bisnis asli.
-                     Cara: Google Maps → cari lokasi → Share → Embed a map → copy src="..." --}}
+                {{-- CATATAN GOOGLE MAPS: Ganti src dengan embed URL lokasi bisnis asli --}}
                 <div class="gc-map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6704782073865!2d103.83018757499225!3d1.3493099986586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17057effffff%3A0x7efb5b33efba1e14!2sMidview%20City!5e0!3m2!1sen!2ssg!4v1700000000001!5m2!1sen!2ssg"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-
             </div>
         </div>
     </section>
 
     {{-- FOOTER --}}
     <footer class="site-footer">
-
-        {{-- Main footer columns --}}
         <div class="footer-main-wrap">
             <div class="container">
                 <div class="footer-cols">
-                    {{-- Col 1: Brand --}}
                     <div>
                         <div class="f-logo-name">FLOOR<span>SHINE</span></div>
                         <p class="f-desc">Floorshine is a trusted floor polishing specialist in Singapore — providing professional floor polishing services for all types of flooring such as marble, granite, terrazzo and more. All at affordable prices. Contact us via WhatsApp to find out more about our services and book your floor polishing service today.</p>
@@ -420,8 +405,6 @@
                             <a href="https://wa.me/6588772899" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
-
-                    {{-- Col 2: Services --}}
                     <div>
                         <div class="f-heading">Services</div>
                         <ul class="f-links">
@@ -435,8 +418,6 @@
                             <li><a href="{{ route('services.terrazzo') }}">Terrazzo Polishing</a></li>
                         </ul>
                     </div>
-
-                    {{-- Col 3: Follow Us --}}
                     <div>
                         <div class="f-heading">Follow Us</div>
                         <ul class="f-links" style="margin-bottom:20px;">
@@ -452,8 +433,6 @@
                             <li><a href="{{ route('blog') }}">Blog</a></li>
                         </ul>
                     </div>
-
-                    {{-- Col 4: Enquiry Form --}}
                     <div class="footer-enquiry-col">
                         <h3>Enquiry Form</h3>
                         <form method="POST" action="#">
@@ -473,16 +452,12 @@
                             <div class="enq-group">
                                 <textarea name="question" placeholder="Your Question"></textarea>
                             </div>
-                            <button type="submit" class="btn-enq-submit">
-                                Submit
-                            </button>
+                            <button type="submit" class="btn-enq-submit">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        {{-- Bottom bar --}}
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; {{ date('Y') }} Floorshine. All rights reserved. | Singapore Professional Floor Polishing</p>
@@ -500,12 +475,10 @@
     </a>
 
     <script>
-        // Hamburger toggle
         const hamburger = document.getElementById('hamburger');
         const navRight  = document.getElementById('navRight');
         hamburger.addEventListener('click', () => navRight.classList.toggle('open'));
 
-        // Mobile: service dropdown toggle
         const serviceDropdown = document.getElementById('serviceDropdown');
         serviceDropdown.querySelector('a').addEventListener('click', function(e) {
             if (window.innerWidth <= 900) {
@@ -514,7 +487,6 @@
             }
         });
 
-        // Close nav when clicking outside
         document.addEventListener('click', function(e) {
             if (window.innerWidth <= 900) {
                 if (!navRight.contains(e.target) && !hamburger.contains(e.target)) {
