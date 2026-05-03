@@ -330,7 +330,6 @@
             <div class="nav-right-icons">
                 <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
 
             {{-- Hamburger for mobile --}}
@@ -427,14 +426,12 @@
                         <ul class="f-links" style="margin-bottom:20px;">
                             <li><a href="#"><i class="fab fa-facebook-f" style="width:16px;"></i> Facebook</a></li>
                             <li><a href="#"><i class="fab fa-instagram" style="width:16px;"></i> Instagram</a></li>
-                            <li><a href="#"><i class="fab fa-tiktok" style="width:16px;"></i> TikTok</a></li>
                         </ul>
                         <div class="f-heading">Quick Links</div>
                         <ul class="f-links">
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About Us</a></li>
                             <li><a href="{{ route('faq') }}">FAQ</a></li>
-                            <li><a href="{{ route('blog') }}">Blog</a></li>
                         </ul>
                     </div>
                     <div class="footer-enquiry-col">

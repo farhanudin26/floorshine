@@ -9,13 +9,10 @@
    HERO - MARBLE TEXTURE BACKGROUND
    ============================================================ */
 .marble-hero {
-    background: linear-gradient(135deg, rgba(30,120,128,0.92) 0%, rgba(53,173,181,0.88) 100%),
-                url("{{ asset('images/floors/marble-hero.jpg') }}") center/cover no-repeat;
     padding: 80px 0 70px;
     position: relative;
 }
-/* CATATAN: Simpan gambar marble di public/images/floors/marble-hero.jpg
-   Jika belum ada gambar, hapus baris url(...) di atas — warna teal tetap tampil */
+
 .marble-hero::after {
     content: '';
     position: absolute;
@@ -40,14 +37,14 @@
     font-family: var(--font-head);
     font-size: clamp(30px, 4.5vw, 54px);
     font-weight: 800;
-    color: #fff;
+    color: #35adb5;
     line-height: 1.12;
     letter-spacing: -1.5px;
     margin-bottom: 18px;
     max-width: 620px;
 }
 .marble-hero p {
-    color: rgba(255,255,255,0.88);
+    color: #35adb5;
     font-size: 15.5px;
     line-height: 1.65;
     max-width: 520px;
@@ -55,8 +52,8 @@
 }
 .btn-quote-white {
     display: inline-block;
-    background: #fff;
-    color: var(--teal-dark);
+    background: #35adb5;
+    color: #fff;
     padding: 13px 30px;
     border-radius: 8px;
     font-size: 15px;
@@ -105,6 +102,8 @@ section { padding: 72px 0; }
 .gray-bg { background: var(--gray-50); }
 .navy-bg { background: var(--navy); }
 .white-bg { background: #fff; }
+.highlighter-green { background: #35adb5; }
+
 
 /* ============================================================
    ABOUT MARBLE SECTION
@@ -117,7 +116,7 @@ section { padding: 72px 0; }
 }
 .about-marble-text p {
     font-size: 15px;
-    color: var(--gray-600);
+    color: #fff;
     line-height: 1.8;
     margin-bottom: 18px;
 }
@@ -126,7 +125,7 @@ section { padding: 72px 0; }
     font-family: var(--font-head);
     font-size: 22px;
     font-weight: 800;
-    color: var(--navy);
+    color: #fff;
     margin: 28px 0 14px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--gray-200);
@@ -148,9 +147,7 @@ section { padding: 72px 0; }
     justify-content: center;
     font-size: 80px;
     color: var(--teal);
-    /* CATATAN: Ganti background & icon dengan gambar:
-       background: url("{{ asset('images/floors/marble-room.jpg') }}") center/cover;
-       Hapus display:flex, align-items, justify-content, font-size, color */
+
 }
 .marble-img-box img {
     width: 100%;
@@ -193,97 +190,111 @@ section { padding: 72px 0; }
 .why-polish-img {
     border-radius: 20px;
     overflow: hidden;
-    background: var(--teal-light);
+    background: var(--highlighter-green);
     aspect-ratio: 4/3;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 80px;
     color: var(--teal);
-    /* CATATAN: Ganti dengan gambar marble setelah dipolish:
-       background: url("{{ asset('images/floors/marble-after.jpg') }}") center/cover;
-       Hapus display:flex, align-items, justify-content, font-size, color */
+}
+
+/* Warna teks */
+.why-polish-grid h2,
+.why-polish-grid .sec-title {
+    color: #35adb5;
+}
+.why-polish-grid p,
+.why-polish-grid .sec-sub {
+    color: #35adb5;
+}
+.why-polish-grid .bullet-list li {
+    color: #35adb5;
+}
+.why-polish-grid .bullet-list li::before {
+    color: #35adb5;
 }
 
 /* ============================================================
    PROCESS SECTION
    ============================================================ */
 .process-section {
-    background: var(--navy);
+    background: #fff;
 }
-.process-section .sec-title { color: #fff; }
-.process-section .sec-sub { color: rgba(255,255,255,0.65); }
 
+/* Header teal */
+.process-header {
+    background: #35adb5;
+    text-align: center;
+    padding: 28px 20px;
+}
+.process-header h2 {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+/* Body putih */
+.process-body {
+    padding: 40px 0 60px;
+}
+.process-intro-text {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.75;
+    max-width: 780px;
+    margin: 0 auto 14px;
+}
+
+/* Grid gambar + steps */
 .process-intro-grid {
     display: grid;
     grid-template-columns: 360px 1fr;
-    gap: 52px;
+    gap: 48px;
     align-items: start;
-    margin-top: 48px;
-}
-.process-img-box {
-    border-radius: 20px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.07);
-    aspect-ratio: 4/5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: rgba(255,255,255,0.3);
-    /* CATATAN: Ganti dengan gambar proses polishing:
-       background: url("{{ asset('images/floors/marble-process.jpg') }}") center/cover;
-       Hapus display:flex, align-items, justify-content, font-size, color */
+    margin-top: 36px;
 }
 
+/* Gambar */
+.process-img-box {
+    border-radius: 16px;
+    overflow: hidden;
+}
+.process-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Judul steps - warna kuning/gold */
 .process-steps-wrap h3 {
     font-family: var(--font-head);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
-    color: var(--teal);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: #e6a817;
+    margin-bottom: 22px;
 }
-.process-steps-wrap h3::before {
-    content: '';
-    width: 32px; height: 3px;
-    background: var(--teal);
-    border-radius: 2px;
-    flex-shrink: 0;
-}
+
+/* Step item */
 .process-step {
-    display: flex;
-    gap: 18px;
-    margin-bottom: 26px;
-    align-items: flex-start;
-}
-.ps-num {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--teal);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-head);
-    font-size: 15px;
-    font-weight: 800;
-    color: #fff;
-    flex-shrink: 0;
-    margin-top: 2px;
+    margin-bottom: 20px;
 }
 .ps-body h4 {
     font-family: var(--font-head);
-    font-size: 16px;
+    font-size: 15.5px;
     font-weight: 700;
-    color: #fff;
-    margin-bottom: 6px;
+    color: #35adb5;
+    margin-bottom: 5px;
 }
 .ps-body p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.65);
+    font-size: 14.5px;
+    color: #555;
     line-height: 1.65;
 }
-
 /* ============================================================
    3 STEPS CTA
    ============================================================ */
@@ -342,122 +353,109 @@ section { padding: 72px 0; }
 .btn-wa-cta:hover { background: var(--teal-dark); color: #fff; }
 
 /* ============================================================
-   WHAT CAN WE OFFER
+   WHAT CAN WE OFFER + MAINTENANCE (1 SECTION)
    ============================================================ */
+
+/* BAGIAN 1 */
 .offer-grid {
     display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 52px;
-    align-items: center;
+    grid-template-columns: 1fr 200px;
+    gap: 40px;
+    align-items: start;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 48px;
 }
 .offer-text h2 {
     font-family: var(--font-head);
-    font-size: clamp(22px, 2.8vw, 34px);
+    font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 800;
-    color: var(--navy);
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin-bottom: 16px;
-}
-.offer-text h2 span { color: var(--teal); }
-.offer-text p {
-    font-size: 15px;
-    color: var(--gray-600);
-    line-height: 1.8;
+    color: #35adb5;
     margin-bottom: 14px;
+    line-height: 1.25;
 }
-.offer-results {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.offer-result-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.offer-text p {
     font-size: 14.5px;
-    color: var(--gray-800);
-    font-weight: 500;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 10px;
 }
-.offer-result-item i { color: var(--teal); font-size: 15px; flex-shrink: 0; }
-.offer-img {
-    border-radius: 20px;
+.offer-bullet {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.offer-bullet li {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    padding-left: 14px;
+    margin-bottom: 4px;
+    position: relative;
+}
+.offer-bullet li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #444;
+}
+.offer-img-box {
+    border-radius: 12px;
     overflow: hidden;
-    background: var(--teal-light);
-    aspect-ratio: 4/3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: var(--teal);
-    /* CATATAN: Ganti dengan:
-       background: url("{{ asset('images/floors/marble-offer.jpg') }}") center/cover;
-       Hapus display:flex, align-items, justify-content, font-size, color */
+}
+.offer-img-box img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
 }
 
-/* ============================================================
-   MAINTENANCE TIPS
-   ============================================================ */
-.maint-section { background: var(--gray-50); }
+/* BAGIAN 2 */
 .maint-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 52px;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
     align-items: start;
 }
 .maint-text h2 {
     font-family: var(--font-head);
-    font-size: clamp(22px, 2.8vw, 34px);
+    font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 800;
-    color: var(--navy);
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin-bottom: 16px;
+    color: #35adb5;
+    margin-bottom: 14px;
+    line-height: 1.25;
 }
-.maint-text h2 span { color: var(--teal); }
 .maint-text p {
-    font-size: 15px;
-    color: var(--gray-600);
-    line-height: 1.8;
-    margin-bottom: 16px;
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.75;
+    margin-bottom: 12px;
 }
-.maint-tips-title {
-    font-family: var(--font-head);
-    font-size: 16px;
+.maint-text strong {
+    color: #222;
     font-weight: 700;
-    color: var(--navy);
-    margin: 20px 0 12px;
 }
-.maint-tip {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 13px;
-    padding: 14px 16px;
-    background: #fff;
-    border-radius: 10px;
-    border-left: 3px solid var(--teal);
+.maint-bullet {
+    list-style: disc;
+    padding-left: 18px;
+    margin-bottom: 14px;
+}
+.maint-bullet li {
     font-size: 14px;
-    color: var(--gray-700, #374151);
-    line-height: 1.6;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 6px;
 }
-.maint-tip i { color: var(--teal); margin-top: 2px; flex-shrink: 0; }
 .maint-img-box {
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    background: var(--teal-light);
-    aspect-ratio: 3/4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    color: var(--teal);
     position: sticky;
     top: 90px;
-    /* CATATAN: Ganti dengan:
-       background: url("{{ asset('images/floors/marble-maintenance.jpg') }}") center/cover;
-       Hapus display:flex, align-items, justify-content, font-size, color */
+}
+.maint-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ============================================================
@@ -584,7 +582,8 @@ section { padding: 72px 0; }
 {{-- ============================================================
      HERO
      ============================================================ --}}
-<section class="marble-hero">
+<section class="marble-hero"
+    style="background: url('{{ asset('images/marble-page/marble.jpg') }}') center/cover no-repeat;">
     <div class="container">
         <div class="hero-badge">
             <i class="fas fa-gem"></i>
@@ -599,7 +598,7 @@ section { padding: 72px 0; }
 {{-- ============================================================
      ABOUT MARBLE + MARBLE POLISHING
      ============================================================ --}}
-<section class="white-bg">
+<section class="highlighter-green">
     <div class="container">
         <div class="about-marble-grid">
             <div class="about-marble-text">
@@ -617,15 +616,9 @@ section { padding: 72px 0; }
             </div>
 
             <div class="marble-img-panel">
-                {{-- ============================================================
-                     CATATAN GAMBAR:
-                     Simpan gambar di: public/images/floors/marble-room.jpg
-                     Lalu ganti isi .marble-img-box dengan:
-                     <img src="{{ asset('images/floors/marble-room.jpg') }}"
-                          alt="Marble Floor" style="width:100%;height:100%;object-fit:cover;">
-                     ============================================================ --}}
                 <div class="marble-img-box">
-                    <i class="fas fa-gem"></i>
+                    <img src="{{ asset('images/marble-page/marble-room.jpg') }}"
+                         alt="Marble Floor">
                 </div>
             </div>
         </div>
@@ -641,7 +634,7 @@ section { padding: 72px 0; }
             <div>
                 <h2 class="sec-title">Why Marble Need Polish</h2>
                 <p class="sec-sub" style="margin-bottom:20px;">Marble needs polishing to protect its surface and enhance its appearance. Marble is a natural stone that is prone to etching, which occurs when acidic substances, such as vinegar or citrus juice, come into contact with the surface of the stone. Polishing helps to fill the surface of marble, making it look cleaner and shinier. In addition, polishing can help remove dirt and stains from the marble's surface, making it better maintained and keeping it looking its best.</p>
-                <p style="font-size:15px; color:var(--gray-600); line-height:1.75; margin-bottom:18px;">The various types of flooring that can be polished include having different shapes such as marble tiles; the following are some examples of marble floors that can be polished:</p>
+                <p style="color: #35adb5;">The various types of flooring that can be polished include having different shapes such as marble tiles; the following are some examples of marble floors that can be polished:</p>
                 <ul class="bullet-list">
                     <li>Scratched due to shifting furniture</li>
                     <li>Cracked due to falling objects</li>
@@ -653,79 +646,67 @@ section { padding: 72px 0; }
                 </ul>
             </div>
 
-            {{-- ============================================================
-                 CATATAN GAMBAR:
-                 Simpan gambar di: public/images/floors/marble-why.jpg
-                 Lalu ganti isi .why-polish-img dengan:
-                 <img src="{{ asset('images/floors/marble-why.jpg') }}"
-                      alt="Marble Polish" style="width:100%;height:100%;object-fit:cover;">
-                 ============================================================ --}}
-            <div class="why-polish-img">
-                <i class="fas fa-gem"></i>
+            <div class="marble-img-panel">
+                <div class="marble-img-box">
+                    <img src="{{ asset('images/marble-page/marble-why.jpg') }}"
+                         alt="Marble Floor">
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ============================================================
-     MARBLE POLISHING PROCESS
-     ============================================================ --}}
 <section class="process-section">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="sec-title" style="color:#fff;">Marble Polishing Process</h2>
-            <p class="sec-sub" style="color:rgba(255,255,255,0.7); margin:0 auto;">We are experienced marble floor polishing professionals, using specialist equipment and products to ensure successful results. Marble floor polishing is the process of renewing and restoring marble floors that have become worn, dull or damaged over time. Our process not only enhances the aesthetic appeal of marble, but also prolongs its life.</p>
-            <p style="font-size:15px; color:rgba(255,255,255,0.65); margin-top:14px; max-width:680px; margin-left:auto; margin-right:auto; line-height:1.7;">It involves a series of specialist techniques and treatments to restore the natural beauty and lustre of marble.</p>
-        </div>
+    {{-- Header teal --}}
+    <div class="process-header">
+        <h2>Marble Polishing Process</h2>
+    </div>
 
-        <div class="process-intro-grid">
-            {{-- ============================================================
-                 CATATAN GAMBAR:
-                 Simpan gambar di: public/images/floors/marble-process.jpg
-                 Lalu ganti isi .process-img-box dengan:
-                 <img src="{{ asset('images/floors/marble-process.jpg') }}"
-                      alt="Marble Polishing Process" style="width:100%;height:100%;object-fit:cover;">
-                 ============================================================ --}}
-            <div class="process-img-box">
-                <i class="fas fa-tools"></i>
-            </div>
+    {{-- Content putih --}}
+    <div class="process-body">
+        <div class="container">
+            <p class="process-intro-text">We are experienced marble floor polishing professionals, using specialist equipment and products to ensure successful results. Marble floor polishing is the process of renewing and restoring marble surfaces that have become worn, dull or damaged over time. Our process not only enhances the aesthetic appeal of marble, but also prolongs its life.</p>
+            <p class="process-intro-text">It involves a series of specialist techniques and treatments to restore the natural beauty and lustre of marble.</p>
 
-            <div class="process-steps-wrap">
-                <h3>Our process for polishing marble includes:</h3>
+            <div class="process-intro-grid">
+                {{-- Gambar kiri --}}
+                <div class="process-img-box">
+                    <img src="{{ asset('images/marble-page/marble-process.jpg') }}" alt="Marble Process">
+                </div>
 
-                <div class="process-step">
-                    <div class="ps-num">1</div>
-                    <div class="ps-body">
-                        <h4>Marble Cleaning</h4>
-                        <p>Cleaning the marble from dirt, dust and old sealant from the previous polish and grit.</p>
+                {{-- Steps kanan --}}
+                <div class="process-steps-wrap">
+                    <h3>Our process for polishing marble includes:</h3>
+
+                    <div class="process-step">
+                        <div class="ps-body">
+                            <h4>#1. Marble Cleaning</h4>
+                            <p>Cleaning the marble from dirt, dust and old sealant from the marble surface and grout.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="ps-num">2</div>
-                    <div class="ps-body">
-                        <h4>Marble Repair</h4>
-                        <p>Repairing cracks, scratches or other damage to the marble surface. This may include patching and smoothing imperfections.</p>
+                    <div class="process-step">
+                        <div class="ps-body">
+                            <h4>#2. Marble Repair</h4>
+                            <p>Repairing cracks, scratches or other damage to the marble surface. This may include patching and smoothing imperfections.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="ps-num">3</div>
-                    <div class="ps-body">
-                        <h4>Sanding & Honing Marble</h4>
-                        <p>Using abrasive materials and techniques to level the surface. This helps to remove and create a clean finish.</p>
+                    <div class="process-step">
+                        <div class="ps-body">
+                            <h4>#3. Sanding & Honing Marble</h4>
+                            <p>Using abrasive materials and techniques to level the surface, remove scratches and create a clean finish.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="ps-num">4</div>
-                    <div class="ps-body">
-                        <h4>Polishing Marble</h4>
-                        <p>Buffing the marble with progressively finer abrasives and polishing powders to achieve a high gloss finish.</p>
+                    <div class="process-step">
+                        <div class="ps-body">
+                            <h4>#4. Polishing Marble</h4>
+                            <p>Rubbing the marble with progressively finer abrasives and polishing powders to achieve a high gloss finish.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="ps-num">5</div>
-                    <div class="ps-body">
-                        <h4>Marble Sealing</h4>
-                        <p>Applying a protective sealant to prevent future stains and damage in the future.</p>
+                    <div class="process-step">
+                        <div class="ps-body">
+                            <h4>#5. Marble Sealing</h4>
+                            <p>Applying a protective sealant to prevent future stains and damage in the future.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -761,83 +742,47 @@ section { padding: 72px 0; }
 </section>
 
 {{-- ============================================================
-     WHAT CAN WE OFFER
+     WHAT CAN WE OFFER + MAINTENANCE TIPS (1 SECTION)
      ============================================================ --}}
 <section class="white-bg">
     <div class="container">
+
+        {{-- BAGIAN 1: What Can We Offer --}}
         <div class="offer-grid">
             <div class="offer-text">
-                <h2>What Can We Offer And<br><span>The Result We Have Done Before?</span></h2>
-                <p>Floorshine Singapore has polishing experts that you should rely on to maintain the entire surface of your floor. After a thorough job, our inspectors will recommend and also provide a follow-up marble polishing solution.</p>
-                <p>Our services primarily emphasise restoring the appearance of your floor surface and extending its service life. Floorshine is a company that focuses on the polishing sector, and the results we have:</p>
-                <div class="offer-results">
-                    <div class="offer-result-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Your scratches/stains/patches are neatly camouflaged</span>
-                    </div>
-                    <div class="offer-result-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Your floor looks shiny</span>
-                    </div>
-                    <div class="offer-result-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Dullness is no longer visible on your floor</span>
-                    </div>
-                </div>
+                <h2>What Can We Offer And The Result We Have Done Before?</h2>
+                <p>Floorshine are Singapore floor polishing experts that you should rely on to maintain the entire surface of your floor. After a thorough surface inspection, we will recommend and also provide a tailor-made polishing solution.</p>
+                <p>Our services primarily emphasize restoring the appearance of your floor surface and extending its service life. Floor shine is a company that focuses on the polishing sector, and the results we have:</p>
+                <ul class="offer-bullet">
+                    <li>Your scratches/stains/scratches are neatly camouflaged</li>
+                    <li>Your floor looks shiny</li>
+                    <li>Dullness is no longer visible on your floor</li>
+                </ul>
             </div>
-            {{-- ============================================================
-                 CATATAN GAMBAR:
-                 Simpan di: public/images/floors/marble-offer.jpg
-                 Ganti isi .offer-img dengan:
-                 <img src="{{ asset('images/floors/marble-offer.jpg') }}"
-                      alt="Marble Result" style="width:100%;height:100%;object-fit:cover;">
-                 ============================================================ --}}
-            <div class="offer-img">
-                <i class="fas fa-gem"></i>
+            <div class="offer-img-box">
+                <img src="{{ asset('images/floorshine-logo.jpg') }}" alt="Floorshine Logo">
             </div>
         </div>
-    </div>
-</section>
 
-{{-- ============================================================
-     MAINTENANCE TIPS
-     ============================================================ --}}
-<section class="maint-section">
-    <div class="container">
+        {{-- BAGIAN 2: Maintenance Tips --}}
         <div class="maint-grid">
             <div class="maint-text">
-                <h2>How To Keep Your <span>Marble Floor</span><br>Well Maintained?</h2>
-                <p>Wiping the floor every day is not enough in order to keep the shine of the marble durable and not easily damaged. The floor needs to be treated with special floor protectors and other polishing materials to be more lasting. But you need to know that all these steps must be carried out by professionals and experienced technicians, because if you get it wrong, instead of the resulting shiny floor, your floor can actually be damaged. If you are looking for a professional floor polishing service, try Floorshine.</p>
-
-                <p class="maint-tips-title" style="font-family:var(--font-head); font-size:16px; font-weight:700; color:var(--navy); margin-top:20px; margin-bottom:14px;">Things to Consider for Marble Floors:</p>
-
-                <div class="maint-tip">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Avoid using strong chemical cleaners as they will damage the marble floor.</span>
-                </div>
-                <div class="maint-tip">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Avoid using a vacuum cleaner with plastic or metal accessories that can damage the surface. Vacuum cleaners with rubber wheels can be used as the chances of scratching the surface are much lower.</span>
-                </div>
-                <div class="maint-tip">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>Not spillages rather than wiping them on the floor as this can cause the liquid to spread to other areas and soak into the surface causing long-term stains.</span>
-                </div>
-
-                <p style="margin-top:20px; font-size:14.5px; color:var(--gray-600); line-height:1.7;">Maintaining a marble floor after polishing may seem like a hassle, but it is the key to having a shiny and long-lasting marble floor.</p>
+                <h2>How To Keep Your Marble Floor Well Maintained?</h2>
+                <p>Keeping the floor clean and shiny is not enough. In order to keep the shine of the marble durable and not easily damaged, the floor needs to be treated with special floor protectors and other treatments. Polishing marble looks easy, but you need to know that all these steps must be carried out by professional and experienced technicians, because if you get it wrong, instead of the resulting shiny floor, your floor can actually be damaged. If you are looking for a professional floor polishing service try Floorshine.</p>
+                <p><strong>Things to Consider for Marble Floors:</strong></p>
+                <ul class="maint-bullet">
+                    <li>Avoid using strong chemical cleaners as they will damage the marble floor.</li>
+                    <li>Avoid using a vacuum cleaner with plastic or metal accessories that can damage the surface. Vacuum cleaners with rubber wheels can be used as the chances of scratching the surface are much lower.</li>
+                    <li>Blot spillages rather than wiping them on the floor as this can cause the liquid to spread to other areas and soak into the surface causing long-term stains.</li>
+                    <li>Choose marble polishing when the floor starts to look dull to restore its lustre.</li>
+                </ul>
+                <p>Maintaining a marble floor after polishing may seem like a hassle, but it is the key to having a shiny and long-lasting marble floor.</p>
             </div>
-
-            {{-- ============================================================
-                 CATATAN GAMBAR:
-                 Simpan di: public/images/floors/marble-maintenance.jpg
-                 Ganti isi .maint-img-box dengan:
-                 <img src="{{ asset('images/floors/marble-maintenance.jpg') }}"
-                      alt="Marble Maintenance" style="width:100%;height:100%;object-fit:cover;">
-                 ============================================================ --}}
             <div class="maint-img-box">
-                <i class="fas fa-broom"></i>
+                <img src="{{ asset('images/marble-page/marble-offer.jpg') }}" alt="Marble Floor">
             </div>
         </div>
+
     </div>
 </section>
 
