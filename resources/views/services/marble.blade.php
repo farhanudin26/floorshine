@@ -102,7 +102,7 @@ section { padding: 72px 0; }
 .gray-bg { background: var(--gray-50); }
 .navy-bg { background: var(--navy); }
 .white-bg { background: #fff; }
-.highlighter-green { background: #35adb5; }
+.green-bg { background: #35adb5; }
 
 
 /* ============================================================
@@ -190,7 +190,7 @@ section { padding: 72px 0; }
 .why-polish-img {
     border-radius: 20px;
     overflow: hidden;
-    background: var(--highlighter-green);
+    background: var(--green-bg);
     aspect-ratio: 4/3;
     display: flex;
     align-items: center;
@@ -598,7 +598,7 @@ section { padding: 72px 0; }
 {{-- ============================================================
      ABOUT MARBLE + MARBLE POLISHING
      ============================================================ --}}
-<section class="highlighter-green">
+<section class="green-bg">
     <div class="container">
         <div class="about-marble-grid">
             <div class="about-marble-text">
