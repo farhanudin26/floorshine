@@ -367,7 +367,7 @@
         <div class="container">
             <h1>About Floorshine</h1>
             <div class="hero-social">
-                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="#quote" title="Enquiry"><i class="fas fa-search"></i></a>
             </div>
         </div>
@@ -482,7 +482,7 @@
                 </div>
             </div>
             <div class="why-wa">
-                <a href="https://wa.me/6588772899" class="btn-wa-outline" target="_blank">
+                <a href="https://wa.me/6588112999" class="btn-wa-outline" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp to Start Now!
                 </a>
             </div>

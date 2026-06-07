@@ -5,8 +5,8 @@
 @push('styles')
     <style>
         /* ============================================================
-                           HERO SECTION
-                           ============================================================ */
+                               HERO SECTION
+                               ============================================================ */
         .hero {
             background: linear-gradient(135deg, #35adb5 0%, #35adb5 60%, #35adb5 100%);
             padding: 80px 0 70px;
@@ -80,8 +80,8 @@
         }
 
         /* ============================================================
-                           STATS BAR
-                           ============================================================ */
+                               STATS BAR
+                               ============================================================ */
         .stats-bar {
             background: #efb700;
             padding: 30px 0;
@@ -125,8 +125,8 @@
         }
 
         /* ============================================================
-                           SECTION COMMONS
-                           ============================================================ */
+                               SECTION COMMONS
+                               ============================================================ */
         section {
             padding: 76px 0;
         }
@@ -167,8 +167,8 @@
         }
 
         /* ============================================================
-                           SOLUTIONS
-                           ============================================================ */
+                               SOLUTIONS
+                               ============================================================ */
         .solutions-bg {
             background: var(--gray-50);
         }
@@ -249,8 +249,8 @@
         }
 
         /* ============================================================
-                           HOW IT WORKS (Find your service)
-                           ============================================================ */
+                               HOW IT WORKS (Find your service)
+                               ============================================================ */
         .how-bg {
             background: var(--teal-light);
         }
@@ -325,8 +325,8 @@
         }
 
         /* ============================================================
-                           TESTIMONIALS
-                           ============================================================ */
+                               TESTIMONIALS
+                               ============================================================ */
         .testi-wrap {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -398,8 +398,8 @@
         }
 
         /* ============================================================
-       FLOOR TYPES (Services Grid)
-       ============================================================ */
+           FLOOR TYPES (Services Grid)
+           ============================================================ */
         .floors-bg {
             background: #35adb5;
             padding: 60px 0;
@@ -507,8 +507,8 @@
         }
 
         /* ============================================================
-       ABOUT US
-       ============================================================ */
+           ABOUT US
+           ============================================================ */
         .about-grid {
             display: grid;
             grid-template-columns: 220px 1fr;
@@ -562,8 +562,8 @@
         }
 
         /* ============================================================
-                           WHY CHOOSE FLOORSHINE
-                           ============================================================ */
+                               WHY CHOOSE FLOORSHINE
+                               ============================================================ */
         .why-bg {
             background: var(--teal-light);
         }
@@ -628,8 +628,8 @@
         }
 
         /* ============================================================
-                           FAQ
-                           ============================================================ */
+                               FAQ
+                               ============================================================ */
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -688,8 +688,8 @@
         }
 
         /* ============================================================
-                           BOOK A SERVICE
-                           ============================================================ */
+                               BOOK A SERVICE
+                               ============================================================ */
         .book-bg {
             background: var(--navy);
         }
@@ -810,8 +810,8 @@
         }
 
         /* ============================================================
-                           FOOTER WITH MAP
-                           ============================================================ */
+                               FOOTER WITH MAP
+                               ============================================================ */
         .footer-main {
             background: var(--navy);
             border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -939,8 +939,8 @@
         }
 
         /* ============================================================
-                           WHATSAPP FLOAT
-                           ============================================================ */
+                               WHATSAPP FLOAT
+                               ============================================================ */
         .wa-float {
             position: fixed;
             bottom: 28px;
@@ -966,8 +966,8 @@
         }
 
         /* ============================================================
-                           RESPONSIVE
-                           ============================================================ */
+                               RESPONSIVE
+                               ============================================================ */
         @media (max-width: 1024px) {
             .floors-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1174,12 +1174,12 @@
                     <p>Get the quote and make the payment. We'll schedule at your convenience.</p>
                 </div>
                 <div class="step-box">
-                    <div class="step-ico"><i class="fas fa-sparkles" style="font-size:22px;"></i></div>
+                    <div class="step-ico"><i class="fas fa-smile" style="font-size:22px;"></i></div>
                     <h3>Enjoy the Floorshine Experience</h3>
                     <p>Relax and let our technicians make your floors shine. Enjoy the quality service.</p>
                 </div>
             </div>
-            <a href="https://wa.me/6588772899" class="btn-wa-start" target="_blank">
+            <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank">
                 <i class="fab fa-whatsapp"></i> WhatsApp to Start Now!
             </a>
         </div>
@@ -1193,7 +1193,7 @@
             <div class="text-center">
                 <span class="section-label">Reviews</span>
                 <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-sub">Don't just take our word for it — here's what our happy customers have to say about
+                <p class="section-sub">Don't just take our word for it here's what our happy customers have to say about
                     Floorshine's service.</p>
             </div>
             <div class="testi-wrap">
@@ -1516,7 +1516,7 @@
                 </div>
             </div>
             <div class="why-wa">
-                <a href="https://wa.me/6588772899" class="btn-wa-start" target="_blank">
+                <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp to Start Now!
                 </a>
             </div>
@@ -1553,7 +1553,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-a">
-                            You can schedule a service by contacting us via WhatsApp at +65 8877 2899, or by filling out the
+                            You can schedule a service by contacting us via WhatsApp at 8811 2999, or by filling out the
                             quote form on our website. Our team will respond within 24 hours to confirm your appointment.
                         </div>
                     </div>
@@ -1662,7 +1662,7 @@
                     <div class="book-feature">
                         <i class="fas fa-check-circle"></i><span>Fast response time</span>
                     </div>
-                    <a href="https://wa.me/6588772899" class="btn-book wa" target="_blank">
+                    <a href="https://wa.me/6588112999" class="btn-book wa" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
@@ -1671,7 +1671,7 @@
     </section>
 
     {{-- WhatsApp Float --}}
-    <a href="https://wa.me/6588772899" class="wa-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

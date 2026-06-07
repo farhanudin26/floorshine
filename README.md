@@ -237,7 +237,7 @@ Semua warna utama dan font didefinisikan sebagai CSS variables di `layouts/app.b
 | | |
 |---|---|
 | 📍 **Alamat** | 18 Sin Ming Lane, #06-27, Midview City, Singapore 573960 |
-| 📱 **WhatsApp** | +65 8877 2899 |
+| 📱 **WhatsApp** | 8811 2999 |
 | 📧 **Email** | enquiry@floorpolishing.sg |
 | 🕐 **Jam Operasional** | Mon – Fri: 9:00 am – 6:00 pm |
 
