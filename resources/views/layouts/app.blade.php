@@ -957,22 +957,52 @@
                     </div>
                     <div class="footer-enquiry-col">
                         <h3>Enquiry Form</h3>
-                        <form method="POST" action="#">
+
+                        @if (session('enquiry_success'))
+                            <div
+                                style="
+            background:rgba(53,173,181,0.15); border:1px solid rgba(53,173,181,0.4);
+            border-radius:8px; padding:12px 16px; margin-bottom:16px;
+            color:#35adb5; font-size:14px;
+        ">
+                                ✅ Thank you! Your enquiry has been sent. We'll get back to you soon.
+                            </div>
+                        @endif
+
+                        <form method="POST" action="{{ route('enquiry.send') }}">
                             @csrf
                             <div class="enq-group">
-                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="text" name="subject" placeholder="Subject"
+                                    value="{{ old('subject') }}"
+                                    style="{{ $errors->has('subject') ? 'border-color:#ff6b6b;' : '' }}">
+                                @error('subject')
+                                    <span style="color:#ff6b6b; font-size:12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="enq-group">
-                                <input type="text" name="name" placeholder="Name">
+                                <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
+                                    style="{{ $errors->has('name') ? 'border-color:#ff6b6b;' : '' }}">
+                                @error('name')
+                                    <span style="color:#ff6b6b; font-size:12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="enq-group">
-                                <input type="email" name="email" placeholder="Email">
+                                <input type="email" name="email" placeholder="Email"
+                                    value="{{ old('email') }}"
+                                    style="{{ $errors->has('email') ? 'border-color:#ff6b6b;' : '' }}">
+                                @error('email')
+                                    <span style="color:#ff6b6b; font-size:12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="enq-group">
-                                <input type="tel" name="mobile" placeholder="Mobile">
+                                <input type="tel" name="mobile" placeholder="Mobile"
+                                    value="{{ old('mobile') }}">
                             </div>
                             <div class="enq-group">
-                                <textarea name="question" placeholder="Your Question"></textarea>
+                                <textarea name="question" placeholder="Your Question">{{ old('question') }}</textarea>
+                                @error('question')
+                                    <span style="color:#ff6b6b; font-size:12px;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <button type="submit" class="btn-enq-submit">Submit</button>
                         </form>

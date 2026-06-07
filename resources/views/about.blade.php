@@ -400,7 +400,7 @@
                 <p>Don't let your dirty and dull floors disrupt the beauty of your home. Contact us today to schedule an
                     appointment and let us help you achieve clean and shiny floors.</p>
                 <p>We offer competitive pricing and unrivalled quality, making us the best choice for your floor polishing
-                    needs. Contact us via WhatsApp at +65 8877 2999 to enquire about our services. If you have any questions
+                    needs. Contact us via WhatsApp at +65 8811 2999 to enquire about our services. If you have any questions
                     about floor polishing feel free to contact Floorshine. Our customer service team will be happy to assist
                     you and recommend the best service for floor polishing issues.</p>
             </div>

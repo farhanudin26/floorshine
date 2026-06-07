@@ -5,8 +5,8 @@
 @push('styles')
     <style>
         /* ============================================================
-                               HERO SECTION
-                               ============================================================ */
+                                               HERO SECTION
+                                               ============================================================ */
         .hero {
             background: linear-gradient(135deg, #35adb5 0%, #35adb5 60%, #35adb5 100%);
             padding: 80px 0 70px;
@@ -80,8 +80,8 @@
         }
 
         /* ============================================================
-                               STATS BAR
-                               ============================================================ */
+                                               STATS BAR
+                                               ============================================================ */
         .stats-bar {
             background: #efb700;
             padding: 30px 0;
@@ -125,8 +125,8 @@
         }
 
         /* ============================================================
-                               SECTION COMMONS
-                               ============================================================ */
+                                               SECTION COMMONS
+                                               ============================================================ */
         section {
             padding: 76px 0;
         }
@@ -167,8 +167,8 @@
         }
 
         /* ============================================================
-                               SOLUTIONS
-                               ============================================================ */
+                                               SOLUTIONS
+                                               ============================================================ */
         .solutions-bg {
             background: var(--gray-50);
         }
@@ -249,8 +249,8 @@
         }
 
         /* ============================================================
-                               HOW IT WORKS (Find your service)
-                               ============================================================ */
+                                               HOW IT WORKS (Find your service)
+                                               ============================================================ */
         .how-bg {
             background: var(--teal-light);
         }
@@ -325,8 +325,8 @@
         }
 
         /* ============================================================
-                               TESTIMONIALS
-                               ============================================================ */
+                                               TESTIMONIALS
+                                               ============================================================ */
         .testi-wrap {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -398,8 +398,8 @@
         }
 
         /* ============================================================
-           FLOOR TYPES (Services Grid)
-           ============================================================ */
+                           FLOOR TYPES (Services Grid)
+                           ============================================================ */
         .floors-bg {
             background: #35adb5;
             padding: 60px 0;
@@ -507,8 +507,8 @@
         }
 
         /* ============================================================
-           ABOUT US
-           ============================================================ */
+                           ABOUT US
+                           ============================================================ */
         .about-grid {
             display: grid;
             grid-template-columns: 220px 1fr;
@@ -562,8 +562,8 @@
         }
 
         /* ============================================================
-                               WHY CHOOSE FLOORSHINE
-                               ============================================================ */
+                                               WHY CHOOSE FLOORSHINE
+                                               ============================================================ */
         .why-bg {
             background: var(--teal-light);
         }
@@ -628,8 +628,8 @@
         }
 
         /* ============================================================
-                               FAQ
-                               ============================================================ */
+                                               FAQ
+                                               ============================================================ */
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -688,8 +688,8 @@
         }
 
         /* ============================================================
-                               BOOK A SERVICE
-                               ============================================================ */
+                                               BOOK A SERVICE
+                                               ============================================================ */
         .book-bg {
             background: var(--navy);
         }
@@ -810,8 +810,8 @@
         }
 
         /* ============================================================
-                               FOOTER WITH MAP
-                               ============================================================ */
+                                               FOOTER WITH MAP
+                                               ============================================================ */
         .footer-main {
             background: var(--navy);
             border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -939,8 +939,8 @@
         }
 
         /* ============================================================
-                               WHATSAPP FLOAT
-                               ============================================================ */
+                                               WHATSAPP FLOAT
+                                               ============================================================ */
         .wa-float {
             position: fixed;
             bottom: 28px;
@@ -966,8 +966,8 @@
         }
 
         /* ============================================================
-                               RESPONSIVE
-                               ============================================================ */
+                                               RESPONSIVE
+                                               ============================================================ */
         @media (max-width: 1024px) {
             .floors-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1439,7 +1439,7 @@
 
             {{-- Contact line --}}
             <p class="about-contact-line">
-                Contact us via WhatsApp at <strong>+65 8877 2999</strong> to enquire about our services. If you have any
+                Contact us via WhatsApp at <strong>+65 8811 2999</strong> to enquire about our services. If you have any
                 questions about floor polishing feel free to contact Floorshine.
                 Our customer service team will be happy to assist you and recommend the best service for floor polishing
                 issues.
@@ -1634,7 +1634,7 @@
                     <div class="book-feature">
                         <i class="fas fa-check-circle"></i><span>Instant quote form</span>
                     </div>
-                    <a href="#" class="btn-book">
+                    <a href="#" class="btn-book" onclick="event.preventDefault(); openBookingModal();">
                         <i class="fas fa-calendar-alt"></i> Book Online
                     </a>
                 </div>
@@ -1643,12 +1643,6 @@
                     <div class="consultant-info">
                         <div class="consultant-avatar">FS</div>
                         <div>
-                            {{-- ============================================================
-                             CATATAN: Jika ada foto consultant, simpan di:
-                             public/images/consultant.jpg
-                             Lalu ganti .consultant-avatar dengan:
-                             <img src="{{ asset('images/consultant.jpg') }}" style="width:50px;height:50px;border-radius:50%;object-fit:cover;">
-                             ============================================================ --}}
                             <div class="consultant-name">Floorshine Specialist</div>
                             <div class="consultant-role">Floor Polishing Expert</div>
                         </div>
@@ -1674,7 +1668,371 @@
     <a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    {{-- ===================== BOOKING MODAL ===================== --}}
+    <div id="bookingModal"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); overflow-y:auto; padding: 20px 0;">
+        <div
+            style="
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        border: 1px solid rgba(0,188,188,0.3);
+        border-radius: 16px;
+        max-width: 580px;
+        width: 90%;
+        margin: 40px auto;
+        padding: 40px;
+        position: relative;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,188,188,0.1);
+    ">
+            {{-- Close Button --}}
+            <button onclick="closeBookingModal()"
+                style="
+            position:absolute; top:16px; right:20px;
+            background:none; border:none; color:#aaa;
+            font-size:24px; cursor:pointer; line-height:1;
+        ">&times;</button>
 
+            {{-- Header --}}
+            <div style="text-align:center; margin-bottom:30px;">
+                <div
+                    style="
+                width:56px; height:56px; border-radius:50%;
+                background:rgba(0,188,188,0.15); border:2px solid rgba(0,188,188,0.4);
+                display:flex; align-items:center; justify-content:center;
+                margin: 0 auto 16px;
+            ">
+                    <i class="fas fa-calendar-alt" style="color:#00bcbc; font-size:22px;"></i>
+                </div>
+                <h2 style="color:#fff; margin:0 0 6px; font-size:1.5rem;">Book A Service</h2>
+                <p style="color:#8899aa; margin:0; font-size:0.9rem;">Fill in your details and we'll get back to you within
+                    24 hours.</p>
+            </div>
+
+            {{-- Alert Box --}}
+            <div id="formAlert"
+                style="display:none; padding:12px 16px; border-radius:8px; margin-bottom:20px; font-size:0.9rem;"></div>
+
+            {{-- Form --}}
+            <form id="bookingForm">
+                @csrf
+
+                {{-- Name --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Full Name <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <input type="text" name="name" placeholder="e.g. John Tan"
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:rgba(255,255,255,0.07); border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none; transition:border 0.2s;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'">
+                    <span class="field-error" data-field="name"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- Email --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Email Address <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <input type="email" name="email" placeholder="e.g. john@email.com"
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:rgba(255,255,255,0.07); border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'">
+                    <span class="field-error" data-field="email"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- Contact --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Contact Number <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <div style="display:flex; gap:0;">
+                        {{-- Prefix +65 --}}
+                        <div
+                            style="
+            padding:11px 16px; border-radius:8px 0 0 8px;
+            background:rgba(0,188,188,0.15); border:1px solid rgba(0,188,188,0.25);
+            border-right:none; color:#00bcbc; font-size:0.95rem;
+            font-weight:700; white-space:nowrap; display:flex; align-items:center;
+        ">
+                            +65</div>
+                        {{-- Input angka saja --}}
+                        <input type="text" name="contact_number" id="contactNumber" placeholder="e.g. 91231234"
+                            maxlength="8" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                            style="
+                flex:1; padding:11px 14px; border-radius:0 8px 8px 0;
+                background:rgba(255,255,255,0.07); border:1px solid rgba(0,188,188,0.25);
+                color:#fff; font-size:0.95rem; box-sizing:border-box; outline:none;
+            "
+                            onfocus="this.style.borderColor='#00bcbc'; this.previousElementSibling.style.borderColor='#00bcbc';"
+                            onblur="this.style.borderColor='rgba(0,188,188,0.25)'; this.previousElementSibling.style.borderColor='rgba(0,188,188,0.25)';">
+                        {{-- Hidden field yang dikirim ke backend --}}
+                        <input type="hidden" name="contact" id="contactFull">
+                    </div>
+                    <span class="field-error" data-field="contact"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+                {{-- Address --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Address <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <input type="text" name="address" placeholder="e.g. Blk 123, Ang Mo Kio Ave 4, #05-67"
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:rgba(255,255,255,0.07); border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'">
+                    <span class="field-error" data-field="address"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- Flooring Type --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Type of Flooring / Stone <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <select name="flooring_type"
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:#16213e; border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none; cursor:pointer;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'">
+                        <option value="" disabled selected style="color:#8899aa;">— Select flooring type —</option>
+                        <option value="Marble Polishing">Marble Polishing</option>
+                        <option value="Granite Polishing">Granite Polishing</option>
+                        <option value="Homogeneous Tiles Polishing">Homogeneous Tiles Polishing</option>
+                        <option value="Parquet Polishing">Parquet Polishing</option>
+                        <option value="Limestone Polishing">Limestone Polishing</option>
+                        <option value="Outdoor Ceramic Tiles Polishing">Outdoor Ceramic Tiles Polishing</option>
+                        <option value="Porcelain Polishing">Porcelain Polishing</option>
+                        <option value="Terrazzo Polishing">Terrazzo Polishing</option>
+                    </select>
+                    <span class="field-error" data-field="flooring_type"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- On-site Survey --}}
+                <div style="margin-bottom:18px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:10px;">
+                        Can we arrange a free on-site survey? <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <div style="display:flex; gap:12px;">
+                        <label
+                            style="
+                        flex:1; padding:12px; border-radius:8px; cursor:pointer; text-align:center;
+                        border:1px solid rgba(0,188,188,0.25); color:#ccd6f6;
+                        transition:all 0.2s; display:flex; align-items:center; justify-content:center; gap:8px;
+                    "
+                            id="label-yes">
+                            <input type="radio" name="survey" value="yes" style="accent-color:#00bcbc;"
+                                onchange="handleSurveyChange(this)">
+                            <i class="fas fa-check" style="color:#00bcbc;"></i> Yes
+                        </label>
+                        <label
+                            style="
+                        flex:1; padding:12px; border-radius:8px; cursor:pointer; text-align:center;
+                        border:1px solid rgba(0,188,188,0.25); color:#ccd6f6;
+                        transition:all 0.2s; display:flex; align-items:center; justify-content:center; gap:8px;
+                    "
+                            id="label-no">
+                            <input type="radio" name="survey" value="no" style="accent-color:#00bcbc;"
+                                onchange="handleSurveyChange(this)">
+                            <i class="fas fa-times" style="color:#ff6b6b;"></i> No, I just want an estimated quote
+                        </label>
+                    </div>
+                    <span class="field-error" data-field="survey"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- Survey Date (conditional) --}}
+                <div id="surveyDateWrapper" style="margin-bottom:18px; display:none;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Preferred Date for On-site Survey <span style="color:#00bcbc;">*</span>
+                    </label>
+                    <input type="date" name="survey_date" id="surveyDateInput"
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:#16213e; border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none; color-scheme: dark;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'">
+                    <span class="field-error" data-field="survey_date"
+                        style="color:#ff6b6b; font-size:0.8rem; display:none;"></span>
+                </div>
+
+                {{-- Remarks --}}
+                <div style="margin-bottom:28px;">
+                    <label style="color:#ccd6f6; font-size:0.85rem; font-weight:600; display:block; margin-bottom:6px;">
+                        Remarks <span style="color:#8899aa; font-weight:400;">(optional)</span>
+                    </label>
+                    <textarea name="remarks" rows="3" placeholder="Any additional information, special requests, or questions..."
+                        style="
+                    width:100%; padding:11px 14px; border-radius:8px;
+                    background:rgba(255,255,255,0.07); border:1px solid rgba(0,188,188,0.25);
+                    color:#fff; font-size:0.95rem; box-sizing:border-box;
+                    outline:none; resize:vertical; font-family:inherit;
+                "
+                        onfocus="this.style.borderColor='#00bcbc'" onblur="this.style.borderColor='rgba(0,188,188,0.25)'"></textarea>
+                </div>
+
+                {{-- Submit --}}
+                <button type="button" onclick="submitBookingForm()" id="submitBtn"
+                    style="
+                width:100%; padding:14px; border-radius:8px; border:none; cursor:pointer;
+                background: linear-gradient(135deg, #00bcbc, #009999);
+                color:#fff; font-size:1rem; font-weight:700;
+                letter-spacing:0.5px; transition:opacity 0.2s;
+                display:flex; align-items:center; justify-content:center; gap:10px;
+            ">
+                    <i class="fas fa-paper-plane"></i>
+                    <span id="submitBtnText">Send Enquiry</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    {{-- ===================== SCRIPTS ===================== --}}
+    <script>
+        // Set min date to today for survey date picker
+        document.getElementById('surveyDateInput').min = new Date().toISOString().split('T')[0];
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = '';
+            resetForm();
+        }
+
+        // Close on backdrop click
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) closeBookingModal();
+        });
+
+        function handleSurveyChange(el) {
+            const wrapper = document.getElementById('surveyDateWrapper');
+            wrapper.style.display = el.value === 'yes' ? 'block' : 'none';
+            if (el.value === 'no') document.querySelector('[name="survey_date"]').value = '';
+
+            // Highlight selected label
+            document.getElementById('label-yes').style.borderColor = 'rgba(0,188,188,0.25)';
+            document.getElementById('label-no').style.borderColor = 'rgba(0,188,188,0.25)';
+            const activeLabel = el.value === 'yes' ? 'label-yes' : 'label-no';
+            document.getElementById(activeLabel).style.borderColor = '#00bcbc';
+            document.getElementById(activeLabel).style.background = 'rgba(0,188,188,0.1)';
+            const inactiveLabel = el.value === 'yes' ? 'label-no' : 'label-yes';
+            document.getElementById(inactiveLabel).style.background = 'transparent';
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('formAlert');
+            alert.style.display = 'block';
+            alert.style.background = type === 'success' ? 'rgba(0,188,188,0.15)' : 'rgba(255,107,107,0.15)';
+            alert.style.border = type === 'success' ? '1px solid rgba(0,188,188,0.4)' : '1px solid rgba(255,107,107,0.4)';
+            alert.style.color = type === 'success' ? '#00bcbc' : '#ff6b6b';
+            alert.innerHTML = type === 'success' ?
+                '<i class="fas fa-check-circle"></i> ' + message :
+                '<i class="fas fa-exclamation-circle"></i> ' + message;
+            alert.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.field-error').forEach(el => {
+                el.style.display = 'none';
+                el.textContent = '';
+            });
+        }
+
+        function showFieldError(field, message) {
+            const el = document.querySelector(`.field-error[data-field="${field}"]`);
+            if (el) {
+                el.textContent = message;
+                el.style.display = 'block';
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('bookingForm').reset();
+            document.getElementById('surveyDateWrapper').style.display = 'none';
+            document.getElementById('formAlert').style.display = 'none';
+            document.getElementById('label-yes').style.borderColor = 'rgba(0,188,188,0.25)';
+            document.getElementById('label-no').style.borderColor = 'rgba(0,188,188,0.25)';
+            document.getElementById('label-yes').style.background = 'transparent';
+            document.getElementById('label-no').style.background = 'transparent';
+            clearErrors();
+        }
+
+        async function submitBookingForm() {
+            clearErrors();
+            const form = document.getElementById('bookingForm');
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('submitBtnText');
+
+            // Gabungkan prefix +65 dengan nomor
+            const contactNum = document.getElementById('contactNumber').value;
+            document.getElementById('contactFull').value = '+65' + contactNum;
+
+            const data = new FormData(form);
+
+            // Loading state
+            btn.disabled = true;
+            btnText.textContent = 'Sending...';
+            btn.querySelector('i').className = 'fas fa-spinner fa-spin';
+
+            try {
+                const response = await fetch('{{ route('booking.send') }}', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                        'Accept': 'application/json',
+                    },
+                    body: data,
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    showAlert('Thank you! Your enquiry has been sent. We\'ll contact you within 24 hours.', 'success');
+                    form.reset();
+                    document.getElementById('surveyDateWrapper').style.display = 'none';
+                } else if (response.status === 422 && result.errors) {
+                    // Validation errors
+                    Object.entries(result.errors).forEach(([field, messages]) => {
+                        showFieldError(field, messages[0]);
+                    });
+                    showAlert('Please fix the errors above and try again.', 'error');
+                } else {
+                    showAlert('Something went wrong. Please try again or contact us via WhatsApp.', 'error');
+                }
+            } catch (err) {
+                showAlert('Connection error. Please check your internet and try again.', 'error');
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = 'Send Enquiry';
+                btn.querySelector('i').className = 'fas fa-paper-plane';
+            }
+        }
+    </script>
 @endsection
 
 @push('scripts')
