@@ -18,8 +18,9 @@ class EnquiryController extends Controller
             'question' => 'required|string|max:2000',
         ]);
 
-        Mail::to('hannstars79@gmail.com')->send(new EnquiryMail($validated));
-
+        Mail::to('enquiry@floorpolishing.sg')
+            ->cc('hannstars79@gmail.com')
+            ->send(new EnquiryMail($validated));
         return back()->with('enquiry_success', true);
     }
 }

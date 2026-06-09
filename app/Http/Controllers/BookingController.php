@@ -21,7 +21,9 @@ class BookingController extends Controller
             'remarks'       => 'nullable|string|max:1000',
         ]);
 
-        Mail::to('hannstars79@gmail.com')->send(new BookingEnquiryMail($validated));
+        Mail::to('enquiry@floorpolishing.sg')
+            ->cc('hannstars79@gmail.com')
+            ->send(new BookingEnquiryMail($validated));
 
         return response()->json(['success' => true, 'message' => 'Enquiry sent successfully!']);
     }
