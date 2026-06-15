@@ -1,9 +1,192 @@
 @extends('layouts.app')
 
 @section('title', 'Granite Floor Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional granite floor polishing services in Singapore. Restoring the lustre and
-    beauty of your granite. Get a free quote today.')
+@section('meta_description', 'Professional granite floor polishing services in Singapore. We restore the lustre & beauty of your granite floors. Free quote available — call +65 8811 2999.')
+@section('meta_keywords', 'granite floor polishing singapore, granite polishing service singapore, granite floor restoration, granite polishing hdb, granite polishing condo singapore')
+@section('og_title', 'Granite Floor Polishing Services in Singapore | Floorshine')
+@section('og_description', 'Professional granite floor polishing services in Singapore. Restoring the lustre and beauty of your granite floors. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Granite Floor Polishing Singapore",
+            "description": "Professional granite floor polishing services in Singapore. Floorshine restores the lustre and beauty of granite floors using the latest technology and specialist equipment. Services include scratch removal, stain handling, honing, polishing, sealing and protection.",
+            "url": "{{ route('services.granite') }}",
+            "image": "{{ asset('images/granite-page/granite.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Granite Floor Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Scratch Removal",
+                            "description": "Our technicians use advanced tools and techniques to carefully remove scratches, restoring a smooth, damage-free appearance of granite."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Stain Handling",
+                            "description": "Our experts have in-depth knowledge of the different types of stains and how to deal with them effectively, without damaging your granite surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Honing and Polishing",
+                            "description": "Through the honing process, we remove minor imperfections and unevenness in the granite, then polish it to a beautiful and highly polished finish."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sealing and Protection",
+                            "description": "Applying a high-quality sealant to protect your granite from future stains and splits, ensuring its durability and maintaining its stunning appearance for years to come."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Natural Cleaning",
+                            "description": "Our team will thoroughly clean and refresh the grout, restoring the overall appearance of your granite floor in a hygienic manner."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Granite Floor Polishing",
+                    "item": "{{ route('services.granite') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "When do I need to polish my granite floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Granite polishing is generally required when the floor begins to look dull, loses its shine, or has scratches that interfere with its visual appeal. Usually after about 1–2 years of use, polishing can help restore its lustre and give it a fresher look."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What distinguishes granite polishing from regular cleaning?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Regular cleaning only removes dirt and dust from the granite surface, while granite polishing involves a process to improve the look of the granite surface, helping to restore the natural beauty of granite by smoothing the surface and removing scratches or blemishes."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is granite polishing safe for all types of granite?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, granite polishing is safe for most granite types. However, certain granite types and colours may require special approaches or products. Our specialists will evaluate your granite before commencing and recommend the right approach to get the best results."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need to clear the room before polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We recommend clearing the room or at least moving large items to facilitate the polishing process. Our team will help prepare the work area for a smooth process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does granite polishing require any special aftercare?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After polishing, we recommend keeping the granite floor clean and dry. Avoid anything that builds up that could seep into the granite, like staining. Make sure to minimise scratching or damage. Our team will provide further aftercare guidance."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is granite polishing available for commercial spaces?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we provide granite polishing services for commercial spaces including offices, hotels, restaurants and shopping malls. We have experience in handling high-traffic environments and always ensure quality work with minimal disruption to your operations."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does granite floor polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost of granite floor polishing in Singapore depends on the size of the area and the condition of the floor. Floorshine offers free quotations — contact us via WhatsApp at +65 8811 2999 with photos of your floor for a transparent, competitive quote with no hidden fees."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does granite floor polishing take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "A standard HDB unit typically takes 4–6 hours. Larger areas or floors in poorer condition may take longer. Our team will advise you on the estimated time during consultation."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

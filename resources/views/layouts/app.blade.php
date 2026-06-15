@@ -9,7 +9,7 @@
     <title>@yield('title', 'Floorshine - Singapore Professional Floor Polishing Company')</title>
     <meta name="description" content="@yield('meta_description', 'Professional floor polishing services in Singapore for Marble, Granite, Parquet, and Tile flooring. Trusted by 800+ happy customers. Get a free quote today!')">
     <meta name="keywords" content="@yield('meta_keywords', 'floor polishing singapore, marble polishing, granite polishing, parquet polishing, tile polishing, homogeneous tiles polishing, floor restoration singapore')">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="@yield('meta_robots', 'index, follow')">
     <meta name="author" content="Floorshine">
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -34,41 +34,241 @@
     <link rel="icon" type="image/png" href="{{ asset('images/logo-mini.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" href="{{ asset('images/logo-mini-new.png') }}">
 
-    {{-- ===================== SCHEMA.ORG LOCAL BUSINESS ===================== --}}
-    <script type="application/ld+json">
+    {{-- ===================== SCHEMA.ORG ===================== --}}
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Floorshine",
-        "description": "Professional floor polishing services in Singapore for Marble, Granite, Parquet, and Tile flooring.",
-        "url": "{{ config('app.url') }}",
-        "logo": "{{ asset('images/logo-floorshine.png') }}",
-        "image": "{{ asset('images/og-floorshine.jpg') }}",
-        "telephone": "+6588112999",
-        "email": "enquiry@floorpolishing.sg",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
-            "addressLocality": "Singapore",
-            "postalCode": "573960",
-            "addressCountry": "SG"
-        },
-        "openingHoursSpecification": [
+        "@graph": [
             {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "description": "Professional floor polishing services in Singapore for Marble, Granite, Parquet, and Tile flooring. Trusted by 800+ happy customers.",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "image": "{{ asset('images/og-floorshine.jpg') }}",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "foundingDate": "2019",
+                "slogan": "Singapore's Trusted Floor Polishing Specialists",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "1.3521",
+                    "longitude": "103.8198"
+                },
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                        "opens": "09:00",
+                        "closes": "18:00"
+                    }
+                ],
+                "priceRange": "$$",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Singapore"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Floor Polishing Services",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Marble Floor Polishing",
+                                "description": "Professional marble floor polishing services using the latest technology and techniques.",
+                                "url": "{{ route('services.marble') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Granite Floor Polishing",
+                                "description": "Professional granite floor polishing services delivering outstanding and satisfying results.",
+                                "url": "{{ route('services.granite') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Homogeneous Tiles Polishing",
+                                "description": "Expert homogeneous tiles polishing using latest technology and quality products.",
+                                "url": "{{ route('services.homogeneous') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Parquet Floor Polishing",
+                                "description": "Restore the lustre of your parquet floor with our professional polishing service.",
+                                "url": "{{ route('services.parquet') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Limestone Floor Polishing",
+                                "description": "Best limestone floor polishing services for a clean and shiny appearance.",
+                                "url": "{{ route('services.limestone') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Outdoor Ceramic Tiles Polishing",
+                                "description": "Professional outdoor ceramic tiles polishing to restore and protect your outdoor floors.",
+                                "url": "{{ route('services.outdoor') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Porcelain Tiles Polishing",
+                                "description": "Expert porcelain polishing services to extend the life and maintain the look of your floor.",
+                                "url": "{{ route('services.porcelain') }}"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Terrazzo Tiles Polishing",
+                                "description": "Professional terrazzo floor polishing for outstanding and satisfying results.",
+                                "url": "{{ route('services.terrazzo') }}"
+                            }
+                        }
+                    ]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/profile.php?id=61565065500306"
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What services does Floorshine offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Floorshine offers a comprehensive range of floor polishing services including Marble, Granite, Homogeneous Tiles, Parquet, Limestone, Outdoor Ceramic Tiles, Porcelain, and Terrazzo polishing. We serve both residential and commercial properties across Singapore."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I schedule a floor polishing service?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You can schedule a service by contacting us via WhatsApp at +65 8811 2999, or by filling out the quote form on our website at {{ config('app.url') }}. Our team will respond within 24 hours to confirm your appointment."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does floor polishing cost in Singapore?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Pricing depends on the type of floor, size of the area, and the level of work required. We offer free quotations — contact us with photos of your floor and our team will provide a transparent, competitive quote. There are no hidden fees."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a floor polishing service take?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The duration depends on the size and condition of the floor. A standard HDB unit typically takes 4–6 hours. Larger areas or floors requiring more restoration may take longer. We will advise you on the estimated time during consultation."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What payment methods does Floorshine accept?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We accept various payment methods including PayNow, bank transfer, and cash. Payment is typically made after the service is completed and you are satisfied with the results."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What types of flooring can Floorshine polish?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We specialise in polishing Marble, Granite, Homogeneous Tiles, Parquet (wood), Limestone, Outdoor Ceramic Tiles, Porcelain, and Terrazzo floors. If you have a different type of flooring, contact us and we will advise accordingly."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide floor polishing services for both HDB and condominiums?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Floorshine provides professional floor polishing services for HDB flats, condominiums, landed properties, and commercial spaces across Singapore."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are the products used safe for children and pets?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we use eco-friendly and safe polishing products that are suitable for households with children and pets, while still delivering high-quality and long-lasting results."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How often should I polish my floors?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It depends on the type of flooring and the amount of foot traffic. Generally, marble and granite floors should be polished every 1–2 years, while parquet floors may need polishing every 2–3 years. Our team can advise you on the best maintenance schedule during consultation."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you provide a free on-site survey before the service?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, we offer a free on-site survey to assess the condition of your floor and recommend the most suitable polishing service. You can also send us photos of your floor via WhatsApp at +65 8811 2999 for a quick assessment."
+                        }
+                    }
+                ]
             }
-        ],
-        "priceRange": "$$",
-        "areaServed": "Singapore",
-        "sameAs": [
-            "https://www.facebook.com/profile.php?id=61565065500306",
         ]
     }
     </script>
+    @endif
 
+    {{-- Google Analytics --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DB8QDTYJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3DB8QDTYJB');
+    </script>
     {{-- ===================== FONTS ===================== --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -894,7 +1094,7 @@
                         <div class="gc-icon"><i class="fas fa-clock"></i></div>
                         <div>
                             <div class="gc-label">Operating Hours</div>
-                            <div class="gc-val">Mon – Fri: 9:00 am – 6:00 pm</div>
+                            <div class="gc-val">Mon – Sat: 9:00 am – 6:00 pm</div>
                         </div>
                     </div>
                 </div>
