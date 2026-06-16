@@ -1,6 +1,165 @@
 @extends('layouts.app')
 
-@section('title', 'FAQ – Frequently Asked Questions | Floorshine Singapore Floor Polishing')
+@section('title', 'FAQ – Floor Polishing Questions & Answers | Floorshine')
+
+@section('meta_description', 'Got questions about floor polishing in Singapore? Find answers to common questions about our services, process, pricing & aftercare. Contact Floorshine today.')
+
+@section('meta_keywords', 'floor polishing faq singapore, floor polishing questions singapore, marble polishing faq, terrazzo polishing questions, floor restoration singapore faq')
+
+@section('og_title', 'FAQ – Floor Polishing Questions & Answers | Floorshine Singapore')
+@section('og_description', 'Find answers to frequently asked questions about Floorshine\'s professional floor polishing services in Singapore. Marble, granite, terrazzo, parquet & more.')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What types of flooring do you specialise in?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Floorshine specialises in professional polishing and restoration services for marble, granite, parquet, terrazzo, homogeneous tiles, limestone, porcelain tiles, and outdoor ceramic tiles. Our team will assess your flooring condition and recommend the most suitable restoration method."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I know if my floor needs polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Your floor may require polishing if it appears dull, scratched, stained, uneven, or has lost its original shine. Regular polishing helps restore the floor's appearance while protecting it from further wear and tear."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can floor polishing remove scratches and stains?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "In many cases, yes. Professional polishing can significantly reduce or remove surface scratches, minor stains, dull patches, and other visible imperfections. The achievable results depend on the floor material and the severity of the damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide services for both residential and commercial properties?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Floorshine provides floor polishing and restoration services for homes, offices, retail shops, showrooms, hotels, restaurants, and various commercial properties across Singapore."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is floor polishing better than replacing the floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "In many situations, professional polishing and restoration can significantly improve the appearance of existing flooring at a fraction of the cost of replacement. A site assessment will help determine the most cost-effective solution for your floor."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is included in the floor restoration process?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The restoration process may include cleaning, stain treatment, scratch removal, honing, polishing, sealing, and protective treatments. The exact process varies depending on the flooring material and its condition."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does floor polishing take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Project duration depends on the floor type, size of the area, and the condition of the surface. Most residential projects can be completed within a day, while larger or more heavily damaged floors may require additional time."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will polishing make my floor slippery?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Professionally polished floors are designed to restore shine and smoothness while maintaining safe usability. The final finish depends on the flooring material and the treatment selected."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you restore heavily damaged floors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Many damaged floors can be successfully restored, including surfaces affected by scratches, stains, dullness, minor chips, and wear from daily use. Our technicians will evaluate the condition during the site survey and advise on the expected outcome."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need to move my furniture before the service?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We recommend clearing movable items from the work area whenever possible. If large furniture pieces are involved, our team can advise on the most suitable arrangement during scheduling."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide a free site survey?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We offer a complimentary on-site assessment to inspect the condition of your flooring and provide a customised quotation based on the required restoration work."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I pay for the service?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We accept various payment methods including PayNow, bank transfer, and cash. Payment is typically made after the service is completed and you are satisfied with the results."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How can I request a quotation?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "You may contact us via phone, WhatsApp, or our online enquiry form. Sharing photos of your flooring and the approximate floor area will help us provide a faster assessment and recommendation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How often should I polish my floors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The recommended frequency depends on the flooring material and the amount of foot traffic. Residential properties typically benefit from periodic polishing every few years, while commercial premises may require more frequent maintenance."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How can I maintain my floor after polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Regular sweeping, prompt cleaning of spills, and using suitable floor cleaning products can help maintain the shine and condition of your floor. We also provide maintenance recommendations based on your floor type."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "FAQ",
+                    "item": "{{ config('app.url') }}/faq"
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
 @push('styles')
 <style>

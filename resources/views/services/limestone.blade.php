@@ -1,9 +1,195 @@
 @extends('layouts.app')
 
 @section('title', 'Limestone Floor Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional limestone floor polishing services in Singapore. Restoring the lustre and
-    beauty of your limestone. Get a free quote today.')
+
+@section('meta_description', 'Professional limestone floor polishing services in Singapore. We restore the lustre & beauty of your limestone floors. Free quote available — call +65 8811 2999')
+
+@section('meta_keywords', 'limestone floor polishing singapore, limestone polishing service singapore, limestone floor restoration, limestone polishing hdb, limestone polishing condo singapore')
+
+@section('og_title', 'Limestone Floor Polishing Singapore | Floorshine')
+@section('og_description', 'Professional limestone floor polishing services in Singapore. Restoring the lustre and beauty of your limestone floors. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Limestone Floor Polishing Singapore",
+            "description": "Professional limestone floor polishing services in Singapore. Floorshine restores the lustre and beauty of limestone floors using specialist equipment and products. Services include floor inspection, smoothing, polishing, cleaning, sealant application and final inspection.",
+            "url": "{{ route('services.limestone') }}",
+            "image": "{{ asset('images/limestone-page/limestone.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Limestone Floor Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Surface Inspection",
+                            "description": "We check the limestone floors thoroughly for scratches or damage. If scratches or cracks are found, we make repairs by filling the grout or damage using appropriate filling material."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Surface Smoothing",
+                            "description": "Using a specialised smoothing machine and fine abrasive pad, we level the surface of the limestone floor to remove scratches, light stains, or unevenness."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing Process",
+                            "description": "We use a specialised pad polishing machine to polish the limestone floor, restoring the lustre of the natural stone surface without damaging its original structure or colour."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Cleaning of Polishing Remains",
+                            "description": "After polishing, we clean the limestone floor to remove any residual dust or chemicals left behind by the polishing process."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Coating or Sealant Application",
+                            "description": "We apply a protective coating or sealant to protect the limestone floor and prolong its durability after the polishing process is complete."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Finishing and Final Inspection",
+                            "description": "We perform a final inspection to ensure polishing results are satisfactory, with an even sheen and smooth surface. Final cleaning removes any residual sealant material."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Limestone Floor Polishing",
+                    "item": "{{ route('services.limestone') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why do I need to polish my limestone floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Limestone floors require polishing due to wear and tear over time, including loss of lustre, stain build-up, and scratches. Polishing helps to bring back the floor to a state of shine and maintains the protective layer on the stone surface."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How often should I polish my limestone floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The frequency of polishing depends on the level of use. For high-traffic areas such as lobbies, living rooms, or corridors, polishing is recommended every 6–12 months. Floors with less traffic may require polishing less frequently, about once every 2 years."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will polishing damage the limestone stone?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Limestone floor polishing is safely done by professional technicians who use tools and materials specifically designed for limestone. Polishing with the right techniques will help remove minor scratches, blemishes, or stains without damaging the stone."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does it take to polish a limestone floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The time taken depends on the size and condition of the floor. Generally, the polishing process can take between a few hours to a full day. We will provide a more accurate time estimate after inspecting the condition of your floor."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What sets Floorshine's limestone polishing service apart from others?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Floorshine provides limestone floor polishing services using experienced technicians with modern equipment and techniques. We use products specifically designed for limestone, and protect the floor long-term with a sealant. Our team always ensures satisfactory results without damaging the stone surface."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I prepare before the limestone polishing service arrives?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Before our team arrives, we recommend clearing the area to be polished of furniture and other items. Make sure the floor is clean of loose dirt and large debris. Our team will handle the rest and prepare the necessary equipment and materials on site."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does limestone floor polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost depends on the size of the polished area, the condition of the floor, and the type of treatment required. Contact us via WhatsApp at +65 8811 2999 for a free consultation and transparent quote with no hidden fees."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

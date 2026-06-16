@@ -1,9 +1,71 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - Floorshine Singapore Professional Floor Polishing')
-@section('meta_description',
-    'Learn about Floorshine, Singapore\'s trusted professional floor polishing company with
-    over 5 years of experience in Marble, Granite, Parquet, and Tile polishing.')
+@section('title', 'About Us — Floorshine Singapore Professional Floor Polishing')
+
+@section('meta_description', 'Learn about Floorshine, Singapore\'s trusted professional floor polishing. Over 5 years experience in Marble, Granite, Terrazzo, Parquet & Tile polishing.')
+
+@section('meta_keywords', 'about floorshine singapore, floor polishing company singapore, professional floor polishing singapore, marble granite terrazzo parquet polishing singapore')
+
+@section('og_title', 'About Us — Floorshine Singapore Professional Floor Polishing')
+@section('og_description', 'Floorshine is Singapore\'s trusted professional floor polishing company. Specialising in Marble, Granite, Terrazzo, Parquet, and Tile polishing. Trusted by 800+ customers. Contact us today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "LocalBusiness",
+            "name": "Floorshine",
+            "description": "Floorshine is Singapore's trusted professional floor polishing company with over 5 years of experience. We specialise in polishing of marble, granite, terrazzo, homogeneous tiles, outdoor tiles, limestone, parquet, and porcelain tiles using high-quality products and the latest methods.",
+            "url": "{{ config('app.url') }}",
+            "logo": "{{ asset('images/logo-floorshine.png') }}",
+            "image": "{{ asset('images/logo-floorshine.png') }}",
+            "telephone": "+6588112999",
+            "email": "enquiry@floorpolishing.sg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                "addressLocality": "Singapore",
+                "postalCode": "573960",
+                "addressCountry": "SG"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "800",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "sameAs": [
+                "https://www.facebook.com/profile.php?id=61565065500306"
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "About Us",
+                    "item": "{{ config('app.url') }}/about"
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

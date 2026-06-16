@@ -1,9 +1,203 @@
 @extends('layouts.app')
 
-@section('title', 'Parquet Floor Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional parquet floor polishing services in Singapore. Restoring the lustre and
-    beauty of your parquet wood floor. Get a free quote today.')
+@section('title', 'Parquet Floor Polishing Services Singapore | Floorshine')
+
+@section('meta_description', 'Professional parquet floor polishing in Singapore. We restore the lustre & beauty of your parquet wood floors. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'parquet floor polishing singapore, parquet polishing service singapore, parquet floor restoration, parquet wood floor polishing hdb, parquet polishing condo singapore')
+
+@section('og_title', 'Parquet Floor Polishing Singapore | Floorshine')
+@section('og_description', 'Professional parquet floor polishing services in Singapore. Restoring the lustre and beauty of your parquet wood floors. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Parquet Floor Polishing Singapore",
+            "description": "Professional parquet floor polishing services in Singapore. Floorshine restores the lustre and beauty of parquet wood floors using specialist equipment and products. Services include preparation, crack filling, sanding, primer application, varnishing and polishing.",
+            "url": "{{ route('services.parquet') }}",
+            "image": "{{ asset('images/parquet-page/parquet.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Parquet Floor Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Preparation",
+                            "description": "Clean the floor of dust, dirt and stains. Place shields around the edges of the parquet to protect it from liquids."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Filling Cracks",
+                            "description": "Fill cracks or small gaps in the parquet with a special product to ensure a smooth and even surface before polishing."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sanding",
+                            "description": "Sand the floor to remove the old finish and smooth the surface, preparing it for the new protective coating."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Apply a Primer",
+                            "description": "Apply one coat of primer to the parquet floor to help the varnish coat adhere properly to the wood surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Apply the Varnish",
+                            "description": "Apply one coat of lacquer to the floor using a machine. Allow the first coat to dry completely before applying the second coat."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing",
+                            "description": "Once the varnish has dried, polish the surface of the wood floor using a polishing machine to give it a shine and make it look like a new parquet floor."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Parquet Floor Polishing",
+                    "item": "{{ route('services.parquet') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why does my parquet floor need polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Over time, parquet flooring can suffer from a loss of lustre, scratches and blemishes due to regular use. Polishing can restore the floor's natural beauty, remove natural faults, and protect the floor from further damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does parquet floor polishing take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The length of polishing time depends on the size of the floor and the condition it is currently in. Typically, polishing can take between half a day to a full day, including drying of the coats. We will provide a more accurate time estimate during the consultation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is parquet floor polishing safe?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, parquet floor polishing is safe when done by experienced professionals. We use environmentally friendly equipment and products to polish the floor without damaging the wood surface or protective coating."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I have to vacate the room during parquet polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We strongly recommend clearing the room or area to be polished so that we can work safely and effectively. If there are items that cannot be moved, our team will help move them during the polishing process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Will polishing parquet flooring change the colour of the wood?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Parquet floor polishing will not change the natural colour of the wood, but it can improve the appearance of dull or faded floors. If you want a more noticeable colour change, you can ask for a more in-depth staining or refinishing service."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can parquet flooring be used immediately after polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After applying the final protective coating, the floor may take a few hours to dry completely. We will let you know when the floor can be safely used to avoid damage to the fresh coating."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does parquet floor polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost of parquet floor polishing in Singapore depends on the size of the area and the condition of the floor. Floorshine offers free quotations — contact us via WhatsApp at +65 8811 2999 with photos of your floor for a transparent, competitive quote with no hidden fees."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How often should parquet floors be polished?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Parquet floors generally need polishing every 2–3 years depending on foot traffic and usage. Regular maintenance such as avoiding water spills and direct sunlight exposure will help extend the time between polishing sessions."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

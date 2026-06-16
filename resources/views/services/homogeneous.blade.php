@@ -1,9 +1,187 @@
 @extends('layouts.app')
 
-@section('title', 'Homogeneous Tiles Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional homogeneous tiles polishing services in Singapore. Restoring the lustre and
-    beauty of your homogeneous tiles. Get a free quote today.')
+@section('title', 'Homogeneous Tiles Polishing Singapore | Floorshine')
+
+@section('meta_description', 'Professional homogeneous tiles polishing services in Singapore. We restore the shine & beauty of your tiles. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'homogeneous tiles polishing singapore, homogeneous floor polishing, homogeneous tiles restoration singapore, homogeneous polishing hdb, homogeneous polishing condo')
+
+@section('og_title', 'Homogeneous Tiles Polishing Singapore | Floorshine')
+@section('og_description', 'Professional homogeneous tiles polishing services in Singapore. Restoring the lustre and beauty of your homogeneous tiles. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Homogeneous Tiles Polishing Singapore",
+            "description": "Professional homogeneous tiles polishing services in Singapore. Floorshine restores the lustre and beauty of homogeneous tiles using the latest technology and specialist equipment. Services include floor surface inspection, smoothing, polishing, cleaning, sealant application and final inspection.",
+            "url": "{{ route('services.homogeneous') }}",
+            "image": "{{ asset('images/homogeneous-page/homogeneous.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Homogeneous Tiles Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Surface Inspection",
+                            "description": "We first inspect the floor for scratches, cracks, or other damage. If any damage is found, we will address the issue first by using a special filler material to level the surface before the polishing process begins."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Surface Smoothing",
+                            "description": "Using specialised polishing compounds, we smooth the floor surface to remove any minor scratches, stubborn stains, or surface unevenness."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing Process",
+                            "description": "We use the right polishing equipment for homogeneous tiles, ensuring an even shine and no damage to the surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Cleaning After Polishing",
+                            "description": "Once the polishing is complete, we clean any remaining dust or residue from the polishing process, ensuring that the floor is completely clean and smooth."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Application of Coating or Sealant",
+                            "description": "To protect the polishing result and keep the shine longer, we apply a protective coating or sealant to protect homogeneous tiles from dirt, stains, and moisture."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Finishing and Final Inspection",
+                            "description": "After all polishing stages are completed, we conduct a final inspection to ensure that the polishing results meet high quality standards."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Homogeneous Tiles Polishing",
+                    "item": "{{ route('services.homogeneous') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why do homogeneous tiles need to be polished?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Over time, homogeneous tiles can lose their shine due to daily use, dirt, dust, and minor scratches. Polishing helps restore the tiles' natural glossiness, enhances the appearance of the floor, and protects the surface from further damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is polishing safe for homogeneous tiles?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, polishing done using the right floor polishing equipment is perfectly safe for homogeneous floors. The polishing process is done by experienced professionals who use equipment and products specifically designed for homogeneous tiles, ensuring the floor is polished safely without causing damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does homogeneous tiles polishing take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The homogeneous tiles polishing process generally takes a few hours, depending on the specific area and condition of the floor. A standard HDB unit typically takes 4–6 hours. A professional polishing service will give you a more precise time estimate after inspecting the condition of your floor."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does homogeneous tiles polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost varies depending on the size of the polished area, the condition of the floor, and the type of service required. Contact us via WhatsApp at +65 8811 2999 for a free quote and we will provide a cost estimate according to your needs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What to do after homogeneous tiles polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After polishing, avoid stepping on the floor for a while to allow the new protective layer to set and harden properly. You can also place doormats or floor protectors and clean up any liquid spills quickly to prevent future staining or damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can homogeneous floor polishing be done by yourself?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Floor polishing requires specialised equipment and expertise that most homeowners do not have. It is highly recommended to use professional services to ensure quality results and to get the best treatment and avoid unwanted damage."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

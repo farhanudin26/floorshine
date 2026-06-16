@@ -1,9 +1,187 @@
 @extends('layouts.app')
 
-@section('title', 'Porcelain Tiles Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional porcelain tiles polishing services in Singapore. Restoring the lustre and
-    beauty of your porcelain. Get a free quote today.')
+@section('title', 'Porcelain Tiles Polishing Services Singapore | Floorshine')
+
+@section('meta_description', 'Professional porcelain tiles polishing in Singapore. We restore the lustre & beauty of your porcelain floors. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'porcelain tiles polishing singapore, porcelain floor polishing service singapore, porcelain floor restoration, porcelain polishing hdb, porcelain polishing condo singapore')
+
+@section('og_title', 'Porcelain Tiles Polishing Services Singapore | Floorshine')
+@section('og_description', 'Professional porcelain tiles polishing services in Singapore. Restoring the lustre and beauty of your porcelain floors. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Porcelain Tiles Polishing Singapore",
+            "description": "Professional porcelain tiles polishing services in Singapore. Floorshine restores the lustre and beauty of porcelain floors using specialist equipment and products. Services include floor condition check, polishing application, drying, protective coating and final inspection.",
+            "url": "{{ route('services.porcelain') }}",
+            "image": "{{ asset('images/porcelain-page/porcelain.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Porcelain Tiles Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Condition Check",
+                            "description": "We carefully check the physical condition of the floor to ensure there is no damage or cracks that could interfere with the polishing process. Minor damage found will be repaired to prepare optimal surfaces."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing Application",
+                            "description": "We use high quality polishing products specifically designed for porcelain floors, applied with polisher machines with specialised pads for an even application over the entire floor surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Drying",
+                            "description": "Once the polishing process is complete, the floor is left to dry for a sufficient amount of time to ensure long-lasting results and maximum protection."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Application of Protection Layer",
+                            "description": "We recommend applying a protective coating such as a sealant to provide an additional layer of protection, helping protect the floor from stains, water, and prevent future deterioration."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Finishing and Final Inspection",
+                            "description": "We perform a final inspection to ensure polishing results are satisfactory, with an even sheen and free from any residue that could leave marks."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Porcelain Tiles Polishing",
+                    "item": "{{ route('services.porcelain') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why do porcelain floors need polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Porcelain floors require polishing to restore faded shine, protect from stains and scratches, and repair minor signs of use on the tiles. Polishing also helps extend the life of the floor and maintain its beautiful appearance."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How often do I need to polish my porcelain floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The frequency depends on how often the floor is used. For low-traffic areas, polishing is usually sufficient once every 1–2 years. For high-traffic areas, polishing can be done every 6 to 12 months."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is porcelain floor polishing safe?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Porcelain floor polishing is safe when done by professionals with the right equipment and materials. Polishing with the right techniques helps maintain the floor while extending its life and protecting it from further wear and damage."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does it take to polish a porcelain floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The time taken depends on the size and condition of the floor. Generally, floor polishing takes between a few hours to a day, depending on the number of rooms and the degree of floor wear."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is porcelain floor polishing suitable for old or damaged floors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Porcelain floor polishing can improve the appearance of dull or slightly damaged floors. For very old or damaged floors with significant structural damage or deep scratches, we recommend further inspection and possibly replacing some damaged parts before proceeding with polishing."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How to maintain porcelain floors after polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After polishing, keep the floor dry and clean regularly with a soft tool such as a microfibre mop. Avoid strong cleaning agents that may damage the polished surface. Use mats and foot protectors under furniture to avoid scratches."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does porcelain tiles polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost of porcelain tiles polishing in Singapore depends on the size of the area and condition of the floor. Floorshine offers free quotations — contact us via WhatsApp at +65 8811 2999 with photos of your floor for a transparent, competitive quote with no hidden fees."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

@@ -1,10 +1,203 @@
 @extends('layouts.app')
 
 @section('title', 'Terrazzo Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional terrazzo floor polishing services in Singapore. Restoring the lustre and
-    beauty of your terrazzo. Get a free quote today.')
 
+@section('meta_description', 'Professional terrazzo floor polishing services in Singapore. We restore the lustre & beauty of your terrazzo. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'terrazzo polishing singapore, terrazzo floor polishing service singapore, terrazzo floor restoration, terrazzo polishing hdb, terrazzo polishing condo singapore')
+
+@section('og_title', 'Terrazzo Polishing Services in Singapore | Floorshine')
+@section('og_description', 'Professional terrazzo floor polishing services in Singapore. Restoring the lustre and beauty of your terrazzo. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Terrazzo Polishing Services Singapore",
+            "description": "Professional terrazzo floor polishing services in Singapore. Floorshine restores the lustre and beauty of terrazzo floors using specialist equipment and products. Services include pH neutral cleaning, mechanical agitation, spot treatment, rinsing, drying, polishing and sealing.",
+            "url": "{{ route('services.terrazzo') }}",
+            "image": "{{ asset('images/terrazzo-page/terrazzo.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Terrazzo Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "pH Neutral Cleaning Solution",
+                            "description": "We start the process using a special cleaning solution specially formulated for terrazzo. The solution effectively removes dirt, dust and stains without damaging your terrazzo floor surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Mechanical Agitation",
+                            "description": "We use specialised equipment to clean the terrazzo surface more effectively, ensuring cleanliness and beauty, removing stains and dirt from the terrazzo surface."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Spot Treatment",
+                            "description": "If certain stains or discolourations are present, our technicians apply a spot treatment using a special cleaning agent designed to remove specific stains such as oil, grease or rust."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Rinsing and Extraction",
+                            "description": "Our team use high quality equipment to ensure proper extraction of dirty water, leaving the floor clean and free of residue."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Drying",
+                            "description": "The terrazzo floor is allowed to dry completely using air movers or a fan to speed up the drying process before proceeding to the next step."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing",
+                            "description": "Using special diamond pads or polishing machines, we gently restore the lustre of your terrazzo floor, removing imperfections, cracks, scratches and dullness."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sealing",
+                            "description": "Finally, we apply a durable sealant to protect the terrazzo surface from future stains and damage."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Terrazzo Polishing",
+                    "item": "{{ route('services.terrazzo') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why do terrazzo floors need polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Terrazzo floor polishing is necessary to restore its natural lustre and repair any scratches or stains that may appear over time. Periodic polishing helps to protect the surface of the terrazzo floor and will result in the floor looking like new again."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What causes terrazzo flooring to become dull or scratched?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Terrazzo floors can become dull or scratched from exposure to dust, dirt, spilled liquids, or friction from furniture and appliances. Daily use can also reduce the look of the floor over time and polishing is one of the best ways to have it repaired."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are the benefits of using a professional polishing service for terrazzo?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Professional polishing services have the right equipment and expertise to effectively polish your terrazzo floor and achieve the best results. The professional team can also ensure that the polishing is done thoroughly and properly, without damaging the surface of your terrazzo floor."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can polishing change the colour or design of terrazzo flooring?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Polishing will not change the colour or design of terrazzo flooring. The process only aims to smooth the surface and restore the natural shine without changing the original colour or design."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does the terrazzo polishing process take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The time taken to polish a terrazzo floor depends on the size and condition of the floor. In general, polishing can take between a few hours up to a full day. Larger floors or floors in poor condition may take more time, so an assessment will be done before we begin."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What should I do after terrazzo floor polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After polishing, keep the floor dry and avoid stepping on it for a few hours until the surface is fully dry and hardened. Consider using a protective coating or sealant to maintain the shine and extend the life of the floor surface."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does terrazzo polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost of terrazzo polishing in Singapore depends on the size of the area and condition of the floor. Floorshine offers free quotations — contact us via WhatsApp at +65 8811 2999 with photos of your floor for a transparent, competitive quote with no hidden fees."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
     @push('styles')
         <style>
             /* ============================================================

@@ -1,9 +1,187 @@
 @extends('layouts.app')
 
-@section('title', 'Outdoor Ceramic Tiles Polishing Services in Singapore | Floorshine')
-@section('meta_description',
-    'Professional outdoor ceramic tiles polishing services in Singapore. Restoring the lustre
-    and beauty of your outdoor ceramic tiles. Get a free quote today.')
+@section('title', 'Outdoor Ceramic Tiles Polishing Singapore | Floorshine')
+
+@section('meta_description', 'Professional outdoor ceramic tiles polishing in Singapore. We restore the lustre & beauty of your outdoor tiles. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'outdoor ceramic tiles polishing singapore, outdoor floor polishing singapore, outdoor ceramic polishing service, outdoor tiles restoration singapore, outdoor floor polishing hdb')
+
+@section('og_title', 'Outdoor Ceramic Tiles Polishing Singapore | Floorshine')
+@section('og_description', 'Professional outdoor ceramic tiles polishing services in Singapore. Restoring the lustre and beauty of your outdoor ceramic tiles. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Outdoor Ceramic Tiles Polishing Singapore",
+            "description": "Professional outdoor ceramic tiles polishing services in Singapore. Floorshine restores the lustre and beauty of outdoor ceramic tiles using specialist equipment and products. Services include floor condition check, polishing application, drying, protective coating and final inspection.",
+            "url": "{{ route('services.outdoor') }}",
+            "image": "{{ asset('images/outdoor-page/outdoor.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Outdoor Ceramic Tiles Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Floor Condition Check",
+                            "description": "Before proceeding to the polishing stage, we check the physical condition of the floor, including any cracks or other damage. Minor repairs can be made to ensure the floor surface is flat and ready for polishing."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing Application",
+                            "description": "We use specialised polishing products for outdoor tiled floors that provide maximum gloss without damaging the surface, applied evenly using a polishing machine with a special pad."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Drying",
+                            "description": "After polishing, the floor is left to dry completely. Drying time varies depending on the type of polishing product used and outdoor weather conditions."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Application of Protective Coatings",
+                            "description": "We recommend and apply an extra protective layer such as a sealant to extend the life of the floor and keep it looking its best in the long run."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Finishing and Final Inspection",
+                            "description": "After polishing, we perform a final inspection to ensure the floor is completely ready for use, with an even sheen and smooth surface. Final cleaning removes any residual sealant material."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Outdoor Ceramic Tiles Polishing",
+                    "item": "{{ route('services.outdoor') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "When is the right time to polish a ceramic outdoor floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ceramic outdoor floor polishing is usually done once every 6–12 months, depending on the condition of the floor and the level of use. If the floor starts to look dull, has scratches or stubborn stains, it is the right time to schedule a polishing. Contact our team for a free inspection of your floor condition."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can polishing protect outdoor ceramic tiles from scratches and damage?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Polishing provides a protective coating on the floor that can reduce the risk of minor scratches and damage from exposure to outside elements. However, polishing alone may not completely protect the floor from heavy damage. Applying floor protectors under heavy furniture can also help avoid deeper scratches."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are the results of outdoor ceramic floor polishing long-lasting?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The results of outdoor ceramic floor polishing can last quite a long time, depending on the condition of the floor and the level of care after polishing. Regular maintenance using safe cleaning products can help maintain longer-lasting results. Polishing can be re-done every 6–12 months, especially on areas that are used frequently."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need to clear the area before outdoor ceramic tiles polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We recommend clearing the area or at least moving large items to facilitate the polishing process. Our team will help prepare the work area for a smooth process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does outdoor ceramic floor polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost varies depending on the size of the polished area, the condition of the floor, and the type of product used. Contact us via WhatsApp at +65 8811 2999 for a free quote and we will provide a cost estimate according to your needs with no hidden fees."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are the chemicals used during outdoor ceramic polishing safe?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ceramic outdoor floor polishing uses special polishing products formulated for ceramics. The products used provide an even surface and are durable, waterproof, and resistant to heat, ensuring the safety of ceramic surfaces."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does outdoor ceramic tiles polishing take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The duration depends on the size and condition of the outdoor area. Generally the process takes a few hours. Our team will provide a more accurate time estimate after inspecting your floor. We ensure minimal disruption to your daily activities."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
     @push('styles')
         <style>

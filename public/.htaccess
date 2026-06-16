@@ -29,6 +29,14 @@
     RewriteRule ^ %1 [L,R=301]
 
     ############################################
+    # Redirect Old Service URLs
+    ############################################
+    RewriteRule ^marble/?$ https://www.floorpolishing.sg/services/marble-polishing [R=301,L]
+    RewriteRule ^granite/?$ https://www.floorpolishing.sg/services/granite-polishing [R=301,L]
+    RewriteRule ^parquet/?$ https://www.floorpolishing.sg/services/parquet-polishing [R=301,L]
+    RewriteRule ^terrazzo/?$ https://www.floorpolishing.sg/services/terrazzo-polishing [R=301,L]
+
+    ############################################
     # Laravel Front Controller
     ############################################
     RewriteCond %{REQUEST_FILENAME} !-d

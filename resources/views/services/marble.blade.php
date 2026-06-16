@@ -1,7 +1,194 @@
 @extends('layouts.app')
 
 @section('title', 'Marble Floor Polishing Services in Singapore | Floorshine')
-@section('meta_description', 'Professional marble floor polishing services in Singapore. Specialised in providing quality service, restoring the lustre and beauty of your marble. Get a free quote today.')
+@section('meta_description', 'Professional marble floor polishing services in Singapore. We restore the lustre & beauty of your marble floors. Free quote available — call +65 8811 2999.')
+
+@section('meta_keywords', 'marble floor polishing singapore, marble polishing service singapore, marble floor restoration, marble polishing hdb, marble polishing condo singapore')
+
+@section('og_title', 'Marble Floor Polishing Singapore | Floorshine')
+@section('og_description', 'Professional marble floor polishing services in Singapore. Restoring the lustre and beauty of your marble floors. Trusted by 800+ customers. Get a free quote today!')
+
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "name": "Marble Floor Polishing Singapore",
+            "description": "Professional marble floor polishing services in Singapore. Floorshine restores the lustre and beauty of marble floors using the latest technology and specialist equipment. Services include marble cleaning, repair, sanding, honing, polishing and sealing.",
+            "url": "{{ route('services.marble') }}",
+            "image": "{{ asset('images/marble-page/marble.jpg') }}",
+            "serviceType": "Floor Polishing",
+            "areaServed": {
+                "@type": "City",
+                "name": "Singapore"
+            },
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Floorshine",
+                "telephone": "+6588112999",
+                "email": "enquiry@floorpolishing.sg",
+                "url": "{{ config('app.url') }}",
+                "logo": "{{ asset('images/logo-floorshine.png') }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "18 Sin Ming Lane, #06-27, Midview City",
+                    "addressLocality": "Singapore",
+                    "postalCode": "573960",
+                    "addressCountry": "SG"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "800",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Marble Floor Polishing Process",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Marble Cleaning",
+                            "description": "Cleaning the marble from dirt, dust and old sealant from the marble surface and grout."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Marble Repair",
+                            "description": "Repairing cracks, scratches or other damage to the marble surface, including patching and smoothing imperfections."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Sanding and Honing Marble",
+                            "description": "Using abrasive materials and techniques to level the surface, remove scratches and create a clean finish."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Polishing Marble",
+                            "description": "Rubbing the marble with progressively finer abrasives and polishing powders to achieve a high gloss finish."
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Marble Sealing",
+                            "description": "Applying a protective sealant to prevent future stains and damage, ensuring the marble floor remains beautiful and durable."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ config('app.url') }}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Services",
+                    "item": "{{ config('app.url') }}/services"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Marble Floor Polishing",
+                    "item": "{{ route('services.marble') }}"
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why has my marble floor lost its lustre?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Marble floors can lose their lustre due to daily use, friction, dust, or spills of acidic substances. These factors lead to microscopic scratches on the marble surface, causing it to look dull and lose its lustrous sheen."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can marble polishing remove scratches on the floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Marble polishing is effective in removing light to moderate scratches on marble surfaces. However, if the scratches are deep or structural damage has occurred, an assessment is first needed by our specialists to determine the appropriate solution."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long do marble floor polishing results last?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Marble floor polishing results can last between 6–12 months, depending on traffic conditions and how you care for the floor after polishing. Periodic maintenance such as cleaning with the right duster will help maintain the lustre for longer."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need to clear the room before marble polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We recommend clearing the room or at least moving large items to facilitate the polishing process. Our team will help move smaller furniture items on the day of the service."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is there any special care needed after marble polishing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "After polishing, keep the marble floor clean and dry. Use a soft mop or cloth to clean, avoid harsh chemicals or abrasive cleaning products. Clean up any liquid spills immediately to prevent staining."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are marble floor polishing services available for commercial and residential areas?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, we provide marble floor polishing services for various types of properties, both residential and commercial. We have experience working with offices, hotels, restaurants, and private homes across Singapore."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does marble floor polishing cost in Singapore?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost of marble floor polishing in Singapore depends on the size of the area and condition of the floor. Floorshine offers free quotations — contact us via WhatsApp at +65 8811 2999 with photos of your floor for a transparent, competitive quote with no hidden fees."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How often should I polish my marble floor?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Marble floors should generally be polished every 1–2 years depending on foot traffic and usage. Regular maintenance helps preserve the shine and extend the life of your marble floor."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
 
 @push('styles')
 <style>
