@@ -252,7 +252,7 @@
         <a href="{{ url('/') }}" class="e404-btn-home">
             <i class="fas fa-home"></i> Back to Home
         </a>
-        <a href="https://wa.me/6588112999" class="e404-btn-wa" target="_blank" rel="noopener">
+        <a href="https://wa.me/6588112999" class="e404-btn-wa" target="_blank" rel="noopener noreferrer" rel="noopener">
             <i class="fab fa-whatsapp"></i> WhatsApp Us
         </a>
     </div>
@@ -288,7 +288,7 @@
     </div>
 
 {{-- WhatsApp Float --}}
-<a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
+<a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 @endsection

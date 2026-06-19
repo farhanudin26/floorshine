@@ -799,7 +799,7 @@
                         <h2>Still Have Questions?</h2>
                         <p>Our team is ready to help. Reach out via WhatsApp for a quick response, or fill in our enquiry form and we'll get back to you within 24 hours.</p>
                         <div class="faq-cta-btns">
-                            <a href="https://wa.me/6588112999" class="btn-faq-wa" target="_blank">
+                            <a href="https://wa.me/6588112999" class="btn-faq-wa" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                             </a>
                             <a href="{{ url('/') }}#quote" class="btn-faq-enquiry">
@@ -814,7 +814,7 @@
     </section>
 
     {{-- WhatsApp Float --}}
-    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

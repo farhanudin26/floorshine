@@ -187,7 +187,7 @@
                             </table>
                             <div style="font-size:11px; color:rgba(255,255,255,0.3); border-top:1px solid rgba(255,255,255,0.08); padding-top:14px;">
                                 © {{ date('Y') }} Floorshine. All rights reserved. &nbsp;|&nbsp;
-                                <a href="https://floorpolishing.sg" style="color:#35adb5; text-decoration:none;">floorpolishing.sg</a>
+                                <a href="https://www.floorpolishing.sg" style="color:#35adb5; text-decoration:none;">floorpolishing.sg</a>
                             </div>
                         </td>
                     </tr>

@@ -1179,7 +1179,7 @@
                     <p>Relax and let our technicians make your floors shine. Enjoy the quality service.</p>
                 </div>
             </div>
-            <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank">
+            <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-whatsapp"></i> WhatsApp to Start Now!
             </a>
         </div>
@@ -1516,7 +1516,7 @@
                 </div>
             </div>
             <div class="why-wa">
-                <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank">
+                <a href="https://wa.me/6588112999" class="btn-wa-start" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i> WhatsApp to Start Now!
                 </a>
             </div>
@@ -1656,7 +1656,7 @@
                     <div class="book-feature">
                         <i class="fas fa-check-circle"></i><span>Fast response time</span>
                     </div>
-                    <a href="https://wa.me/6588112999" class="btn-book wa" target="_blank">
+                    <a href="https://wa.me/6588112999" class="btn-book wa" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
@@ -1665,7 +1665,7 @@
     </section>
 
     {{-- WhatsApp Float --}}
-    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
     {{-- ===================== BOOKING MODAL ===================== --}}

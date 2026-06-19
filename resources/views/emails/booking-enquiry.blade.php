@@ -280,14 +280,14 @@
                                 </tr>
                                 <tr>
                                     <td align="center" style="padding: 4px 0;">
-                                        <span style="font-size: 12px; color: rgba(255,255,255,0.6);">🕐 Mon - Fri: 9:00 am – 6:00 pm</span>
+                                        <span style="font-size: 12px; color: rgba(255,255,255,0.6);">🕐 Mon - Sat: 9:00 am – 6:00 pm</span>
                                     </td>
                                 </tr>
                             </table>
 
                             <div style="font-size: 11px; color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 14px;">
                                 © {{ date('Y') }} Floorshine. All rights reserved. &nbsp;|&nbsp;
-                                <a href="https://floorpolishing.sg" style="color: #35adb5; text-decoration: none;">floorpolishing.sg</a>
+                                <a href="https://www.floorpolishing.sg" style="color: #35adb5; text-decoration: none;">floorpolishing.sg</a>
                             </div>
                         </td>
                     </tr>

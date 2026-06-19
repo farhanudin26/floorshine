@@ -1035,14 +1035,14 @@
                     <a href="{{ route('faq') }}" class="{{ request()->routeIs('faq') ? 'active' : '' }}">FAQ</a>
                 </li>
                 <li>
-                    <a href="https://wa.me/6588112999" target="_blank">WhatsApp Us</a>
+                    <a href="https://wa.me/6588112999" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
                 </li>
             </ul>
 
             {{-- Social icons kanan --}}
             <div class="nav-right-icons">
                 <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL" title="Facebook"
-                    target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
             </div>
 
             {{-- Hamburger for mobile --}}
@@ -1078,7 +1078,7 @@
                         <div class="gc-icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
                             <div class="gc-label">WhatsApp</div>
-                            <div class="gc-val"><a href="https://wa.me/6588112999" target="_blank">8811 2999</a>
+                            <div class="gc-val"><a href="https://wa.me/6588112999" target="_blank" rel="noopener noreferrer">8811 2999</a>
                             </div>
                         </div>
                     </div>
@@ -1124,8 +1124,8 @@
                             our services and book your floor polishing service today.</p>
                         <div class="f-social">
                             <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL"
-                                target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://wa.me/6588112999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/6588112999" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div>
@@ -1223,7 +1223,7 @@
     </footer>
 
     {{-- WhatsApp Float --}}
-    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
