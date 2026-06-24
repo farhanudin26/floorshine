@@ -1,0 +1,38 @@
+# Floorshine – Singapore Professional Floor Polishing Company
+
+> Floorshine (operating as FLOOR SHINE Pte Ltd, founded 2019) is a trusted floor polishing specialist in Singapore. We restore marble, granite, parquet, homogeneous tiles, limestone, outdoor ceramic tiles, porcelain tiles, and terrazzo tiles to like-new condition for residential and commercial properties. Trusted by 800+ customers with a 4.8 rating. Free on-site survey available.
+
+Floorshine provides professional floor polishing, restoration, and maintenance services for HDB flats, condominiums, landed properties, and commercial premises across Singapore. Services are quoted for free based on floor type, area size, and condition. Bookings can be made online via the website enquiry form or directly through WhatsApp; payment is collected after the job is completed via PayNow, bank transfer, or cash.
+
+## Services
+
+- [Marble Floor Polishing](https://www.floorpolishing.sg/marble): Professional marble floor polishing using the latest technology and techniques to remove scratches, cracks, and stains.
+- [Granite Floor Polishing](https://www.floorpolishing.sg/granite): Restores the natural shine and durability of granite floors.
+- [Homogeneous Tiles Polishing](https://www.floorpolishing.sg/homogeneous-tiles): Cleans and restores shine on homogeneous tile flooring using the latest technology and quality products.
+- [Parquet Floor Polishing](https://www.floorpolishing.sg/parquet): Restores the lustre of dulled parquet (wood) flooring.
+- [Limestone Floor Polishing](https://www.floorpolishing.sg/limestone): Best limestone floor polishing service for a clean and shiny appearance.
+- [Outdoor Ceramic Tiles Polishing](https://www.floorpolishing.sg/outdoor-ceramic-tiles): Restores and protects outdoor ceramic tile surfaces from weather damage and dullness.
+- [Porcelain Tiles Polishing](https://www.floorpolishing.sg/porcelain-tiles): Extends the life and maintains the look of porcelain tile floors.
+- [Terrazzo Tiles Polishing](https://www.floorpolishing.sg/terrazzo-tiles): Professional terrazzo floor polishing for outstanding, satisfying results.
+
+## Company Info
+
+- [Homepage](https://www.floorpolishing.sg/): Overview of services, company stats, and customer testimonials.
+- [About Us](https://www.floorpolishing.sg/about): Company background, vision, and mission.
+- [FAQ](https://www.floorpolishing.sg/faq): Common questions about pricing, scheduling, payment, and service coverage.
+- Slogan: "Singapore's Trusted Floor Polishing Specialists"
+- Founded: 2019
+- Address: 18 Sin Ming Lane, #06-27, Midview City, Singapore 573960
+- Phone / WhatsApp: +65 8811 2999
+- Email: enquiry@floorpolishing.sg
+- Operating Hours: Monday–Saturday, 9:00 am – 6:00 pm
+- Facebook: https://www.facebook.com/profile.php?id=61565065500306
+
+## Notes
+
+- Coverage area: Singapore — residential (HDB, condominium, landed property) and commercial properties.
+- Typical job duration: 4–6 hours for a standard HDB unit; larger or more damaged areas take longer.
+- Recommended polishing frequency: marble and granite floors every 1–2 years; parquet floors every 2–3 years.
+- Polishing products used are eco-friendly and safe for households with children and pets.
+- Free on-site survey is offered before service confirmation; photos can also be sent via WhatsApp for a quick assessment.
+- Structured data (Schema.org LocalBusiness + FAQPage JSON-LD) is already implemented site-wide for richer AI/search understanding.

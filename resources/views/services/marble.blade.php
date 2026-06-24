@@ -18,7 +18,7 @@
             "name": "Marble Floor Polishing Singapore",
             "description": "Professional marble floor polishing services in Singapore. Floorshine restores the lustre and beauty of marble floors using the latest technology and specialist equipment. Services include marble cleaning, repair, sanding, honing, polishing and sealing.",
             "url": "{{ route('services.marble') }}",
-            "image": "{{ asset('images/marble-page/marble.jpg') }}",
+            "image": "{{ asset('images/marble-page/marble.webp') }}",
             "serviceType": "Floor Polishing",
             "areaServed": {
                 "@type": "City",
@@ -770,7 +770,7 @@ section { padding: 72px 0; }
      HERO
      ============================================================ --}}
 <section class="marble-hero"
-    style="background: url('{{ asset('images/marble-page/marble.jpg') }}') center/cover no-repeat;">
+    style="background: url('{{ asset('images/marble-page/marble.webp') }}') center/cover no-repeat;">
     <div class="container">
         <div class="hero-badge">
             <i class="fas fa-gem"></i>
@@ -804,7 +804,7 @@ section { padding: 72px 0; }
 
             <div class="marble-img-panel">
                 <div class="marble-img-box">
-                    <img src="{{ asset('images/marble-page/marble-room.jpg') }}"
+                    <img src="{{ asset('images/marble-page/marble-room.webp') }}"
                          alt="Marble Floor">
                 </div>
             </div>
@@ -835,7 +835,7 @@ section { padding: 72px 0; }
 
             <div class="marble-img-panel">
                 <div class="marble-img-box">
-                    <img src="{{ asset('images/marble-page/marble-why.jpg') }}"
+                    <img src="{{ asset('images/marble-page/marble-why.webp') }}"
                          alt="Marble Floor">
                 </div>
             </div>
@@ -858,7 +858,7 @@ section { padding: 72px 0; }
             <div class="process-intro-grid">
                 {{-- Gambar kiri --}}
                 <div class="process-img-box">
-                    <img src="{{ asset('images/marble-page/marble-process.jpg') }}" alt="Marble Process">
+                    <img src="{{ asset('images/marble-page/marble-process.webp') }}" alt="Marble Process">
                 </div>
 
                 {{-- Steps kanan --}}
@@ -966,7 +966,7 @@ section { padding: 72px 0; }
                 <p>Maintaining a marble floor after polishing may seem like a hassle, but it is the key to having a shiny and long-lasting marble floor.</p>
             </div>
             <div class="maint-img-box">
-                <img src="{{ asset('images/marble-page/marble-offer.jpg') }}" alt="Marble Floor">
+                <img src="{{ asset('images/marble-page/marble-offer.webp') }}" alt="Marble Floor">
             </div>
         </div>
 

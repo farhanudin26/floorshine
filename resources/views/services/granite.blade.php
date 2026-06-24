@@ -16,7 +16,7 @@
             "name": "Granite Floor Polishing Singapore",
             "description": "Professional granite floor polishing services in Singapore. Floorshine restores the lustre and beauty of granite floors using the latest technology and specialist equipment. Services include scratch removal, stain handling, honing, polishing, sealing and protection.",
             "url": "{{ route('services.granite') }}",
-            "image": "{{ asset('images/granite-page/granite.jpg') }}",
+            "image": "{{ asset('images/granite-page/granite.webp') }}",
             "serviceType": "Floor Polishing",
             "areaServed": {
                 "@type": "City",
@@ -366,9 +366,6 @@
                 justify-content: center;
                 font-size: 80px;
                 color: var(--teal);
-                /* CATATAN: Ganti dengan:
-                               background: url("{{ asset('images/floors/granite-room.jpg') }}") center/cover;
-                               Hapus display:flex, align-items, justify-content, font-size, color */
             }
 
             /* Bullet list */
@@ -956,7 +953,7 @@
      HERO
      ============================================================ --}}
     <section class="granite-hero"
-        style="background: url('{{ asset('images/granite-page/granite.jpg') }}') center/cover no-repeat;">>
+        style="background: url('{{ asset('images/granite-page/granite.webp') }}') center/cover no-repeat;">>
 
         <div class="container">
             <div class="hero-badge">
@@ -1002,7 +999,7 @@
                 <div class="granite-img-panel">
 
                     <div class="granite-img-box">
-                        <img src="{{ asset('images/granite-page/granite-room.jpg') }}" alt="granite Floor">
+                        <img src="{{ asset('images/granite-page/granite-room.webp') }}" alt="granite Floor">
                     </div>
                 </div>
             </div>
@@ -1035,7 +1032,7 @@
 
                 <div class="granite-img-panel">
                     <div class="granite-img-box">
-                        <img src="{{ asset('images/granite-page/granite-why.jpg') }}" alt="granite Floor">
+                        <img src="{{ asset('images/granite-page/granite-why.webp') }}" alt="granite Floor">
                     </div>
                 </div>
             </div>
@@ -1064,7 +1061,7 @@
 
             <div class="process-intro-grid">
                 <div class="process-img-box">
-                    <img src="{{ asset('images/granite-page/granite-process.jpg') }}" alt="Granite Process">
+                    <img src="{{ asset('images/granite-page/granite-process.webp') }}" alt="Granite Process">
                 </div>
 
                 <div class="process-steps-wrap">
@@ -1207,7 +1204,7 @@
                             but it is the key to having a shiny and long-lasting granite floor.</p>
                     </div>
                     <div class="maint-img-box">
-                        <img src="{{ asset('images/granite-page/granite-maintenance.jpg') }}" alt="Granite Maintenance">
+                        <img src="{{ asset('images/granite-page/granite-maintenance.webp') }}" alt="Granite Maintenance">
                     </div>
                 </div>
             </div>

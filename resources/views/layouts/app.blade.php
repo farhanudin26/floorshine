@@ -977,15 +977,15 @@
     <div class="navbar-top">
         <div class="container">
             <a href="{{ route('home') }}" class="logo">
-                {{-- CATATAN: Simpan logo di: public/images/logo-floorshine.png --}}
-                <img src="{{ asset('images/logo-floorshine.png') }}" height="48" alt="Floorshine">
+                <img src="{{ asset('images/logo-floorshine.png') }}" height="48" alt="Floorshine Logo">
             </a>
             <div class="navbar-top-right">
-                <a href="tel:+6588772999">
+                <a href="tel:+6588112999" aria-label="Call us at +65 8811 2999">
                     <i class="fas fa-phone"></i>
                     <span>8811 2999</span>
                 </a>
-                <a href="mailto:enquiry@floorpolishing.sg">
+
+                <a href="mailto:enquiry@floorpolishing.sg" aria-label="Email us at enquiry@floorpolishing.sg">
                     <i class="fas fa-envelope"></i>
                     <span>enquiry@floorpolishing.sg</span>
                 </a>
@@ -998,7 +998,7 @@
         <div class="container">
             <ul class="nav-links" id="navLinks">
                 <li>
-                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}" aria-label="Home">
                         <i class="fas fa-home"></i>
                     </a>
                 </li>
@@ -1042,7 +1042,9 @@
             {{-- Social icons kanan --}}
             <div class="nav-right-icons">
                 <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL" title="Facebook"
-                    target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
 
             {{-- Hamburger for mobile --}}
@@ -1078,7 +1080,8 @@
                         <div class="gc-icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
                             <div class="gc-label">WhatsApp</div>
-                            <div class="gc-val"><a href="https://wa.me/6588112999" target="_blank" rel="noopener noreferrer">8811 2999</a>
+                            <div class="gc-val"><a href="https://wa.me/6588112999" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Chat on WhatsApp">8811 2999</a>
                             </div>
                         </div>
                     </div>
@@ -1123,9 +1126,10 @@
                             terrazzo and more. All at affordable prices. Contact us via WhatsApp to find out more about
                             our services and book your floor polishing service today.</p>
                         <div class="f-social">
-                            <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL"
+                            <a href="https://www.facebook.com/profile.php?id=61565065500306&mibextid=ZbWKwL" aria-label="Follow us on Facebook"
                                 target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://wa.me/6588112999" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://wa.me/6588112999" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div>
@@ -1223,7 +1227,8 @@
     </footer>
 
     {{-- WhatsApp Float --}}
-    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <a href="https://wa.me/6588112999" class="wa-float" target="_blank" rel="noopener noreferrer"
+        title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

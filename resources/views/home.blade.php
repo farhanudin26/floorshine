@@ -1416,7 +1416,7 @@
             <div class="about-grid">
                 {{-- Kiri: Logo --}}
                 <div>
-                    <img src="{{ asset('images/floorshine-logo.jpg') }}" style="max-width: 180px; display: block;">
+                    <img src="{{ asset('images/floorshine-logo.jpg') }}" style="max-width: 180px; display: block;" alt="Floorshine Logo">
                 </div>
 
                 {{-- Kanan: Konten --}}

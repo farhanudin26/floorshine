@@ -19,7 +19,7 @@
             "name": "Homogeneous Tiles Polishing Singapore",
             "description": "Professional homogeneous tiles polishing services in Singapore. Floorshine restores the lustre and beauty of homogeneous tiles using the latest technology and specialist equipment. Services include floor surface inspection, smoothing, polishing, cleaning, sealant application and final inspection.",
             "url": "{{ route('services.homogeneous') }}",
-            "image": "{{ asset('images/homogeneous-page/homogeneous.jpg') }}",
+            "image": "{{ asset('images/homogeneous-page/homogeneous.webp') }}",
             "serviceType": "Floor Polishing",
             "areaServed": {
                 "@type": "City",
@@ -892,7 +892,7 @@
 @section('content')
 
     <section class="homogeneous-hero"
-        style="background: url('{{ asset('images/homogeneous-page/homogeneous.jpg') }}') center/cover no-repeat;">
+        style="background: url('{{ asset('images/homogeneous-page/homogeneous.webp') }}') center/cover no-repeat;">
         <div class="container">
             <div class="hero-badge"><i class="fas fa-th-large"></i> Professional Floor Polishing — Singapore</div>
             <h1>Homogeneous Tiles Polishing<br>Services in Singapore</h1>
@@ -925,7 +925,7 @@
                         for a polishing service.</p>
                 </div>
                 <div class="img-panel">
-                    <div class="img-box"> <img src="{{ asset('images/homogeneous-page/homogeneous-room.jpg') }}"
+                    <div class="img-box"> <img src="{{ asset('images/homogeneous-page/homogeneous-room.webp') }}"
                             alt="Homogeneous Tiles" style="width:100%;height:100%;object-fit:cover;"></i></div>
                 </div>
             </div>
@@ -954,7 +954,7 @@
                     </ul>
                 </div>
 
-                <div class="why-img"> <img src="{{ asset('images/homogeneous-page/homogeneous-why.jpg') }}" alt="Why Polish"
+                <div class="why-img"> <img src="{{ asset('images/homogeneous-page/homogeneous-why.webp') }}" alt="Why Polish"
                         style="width:100%;height:100%;object-fit:cover;"></i></div>
             </div>
         </div>
@@ -976,7 +976,7 @@
             </div>
             <div class="process-intro-grid">
 
-                <div class="process-img-box"> <img src="{{ asset('images/homogeneous-page/homogeneous-process.jpg') }}"
+                <div class="process-img-box"> <img src="{{ asset('images/homogeneous-page/homogeneous-process.webp') }}"
                         alt="Process" style="width:100%;height:100%;object-fit:cover;"></i></div>
                 <div class="process-steps-wrap">
                     <h3>Our process for polishing homogeneous tiles includes:</h3>
@@ -1119,7 +1119,7 @@
                             hassle, but it is the key to having a shiny and long-lasting homogeneous tiles.</p>
                     </div>
                     <div class="maint-img-box">
-                        <img src="{{ asset('images/homogeneous-page/homogeneous-maintenance.jpg') }}" alt="Maintenance">
+                        <img src="{{ asset('images/homogeneous-page/homogeneous-maintenance.webp') }}" alt="Maintenance">
                     </div>
                 </div>
             </div>

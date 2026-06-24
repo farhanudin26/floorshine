@@ -19,7 +19,7 @@
             "name": "Parquet Floor Polishing Singapore",
             "description": "Professional parquet floor polishing services in Singapore. Floorshine restores the lustre and beauty of parquet wood floors using specialist equipment and products. Services include preparation, crack filling, sanding, primer application, varnishing and polishing.",
             "url": "{{ route('services.parquet') }}",
-            "image": "{{ asset('images/parquet-page/parquet.jpg') }}",
+            "image": "{{ asset('images/parquet-page/parquet.webp') }}",
             "serviceType": "Floor Polishing",
             "areaServed": {
                 "@type": "City",
@@ -935,7 +935,7 @@
      HERO
      ============================================================ --}}
     <section class="parquet-hero"
-        style="background: url('{{ asset('images/parquet-page/parquet.jpg') }}') center/cover no-repeat;">
+        style="background: url('{{ asset('images/parquet-page/parquet.webp') }}') center/cover no-repeat;">
         <div class="container">
             <div class="hero-badge">
                 <i class="fas fa-grip-lines"></i>
@@ -979,7 +979,7 @@
                 <div class="parquet-img-panel">
 
                     <div class="parquet-img-box">
-                        <img src="{{ asset('images/parquet-page/parquet-room.jpg') }}" alt="Parquet Floor"
+                        <img src="{{ asset('images/parquet-page/parquet-room.webp') }}" alt="Parquet Floor"
                             style="width:100%;height:100%;object-fit:cover;"></i>
                     </div>
                 </div>
@@ -1013,7 +1013,7 @@
                     </ul>
                 </div>
                 <div class="why-polish-img">
-                    <img src="{{ asset('images/parquet-page/parquet-why.jpg') }}" alt="Why Polish"
+                    <img src="{{ asset('images/parquet-page/parquet-why.webp') }}" alt="Why Polish"
                         style="width:100%;height:100%;object-fit:cover;">
                 </div>
             </div>
@@ -1041,7 +1041,7 @@
             <div class="process-intro-grid">
 
                 <div class="process-img-box">
-                    <img src="{{ asset('images/parquet-page/parquet-process.jpg') }}" alt="Parquet Process"
+                    <img src="{{ asset('images/parquet-page/parquet-process.webp') }}" alt="Parquet Process"
                         style="width:100%;height:100%;object-fit:cover;"></i>
                 </div>
 
@@ -1180,7 +1180,7 @@
                             but it is the key to having a shiny and long-lasting parquet floor.</p>
                     </div>
                     <div class="maint-img-box">
-                        <img src="{{ asset('images/parquet-page/parquet-maintenance.jpg') }}" alt="Parquet Maintenance">
+                        <img src="{{ asset('images/parquet-page/parquet-maintenance.webp') }}" alt="Parquet Maintenance">
                     </div>
                 </div>
             </div>
