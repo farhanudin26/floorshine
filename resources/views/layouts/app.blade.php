@@ -33,7 +33,8 @@
     {{-- ===================== FAVICON ===================== --}}
     <link rel="icon" type="image/png" href="{{ asset('images/logo-mini.png') }}" sizes="32x32">
     <link rel="apple-touch-icon" href="{{ asset('images/logo-mini-new.png') }}">
-
+    {{-- ===================== LCP PRELOAD (dari halaman child) ===================== --}}
+    @stack('preload')
     {{-- ===================== SCHEMA.ORG ===================== --}}
     @hasSection('schema')
         @yield('schema')

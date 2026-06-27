@@ -189,7 +189,12 @@
 }
 </script>
 @endsection
-
+@push('preload')
+<link rel="preload"
+      as="image"
+      href="{{ asset('images/marble-page/marble.webp') }}"
+      fetchpriority="high">
+@endpush
 @push('styles')
 <style>
 /* ============================================================
@@ -198,6 +203,16 @@
 .marble-hero {
     padding: 80px 0 70px;
     position: relative;
+        overflow: hidden; /* tambahkan ke rule yang sudah ada */
+}
+.marble-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
 }
 
 .marble-hero::after {
@@ -766,12 +781,20 @@ section { padding: 72px 0; }
 
 @section('content')
 
-{{-- ============================================================
-     HERO
-     ============================================================ --}}
-<section class="marble-hero"
-    style="background: url('{{ asset('images/marble-page/marble.webp') }}') center/cover no-repeat;">
-    <div class="container">
+{{-- HERO --}}
+<section class="marble-hero">
+
+    {{-- LCP Image: browser-discoverable, tidak pakai CSS background --}}
+    <img src="{{ asset('images/marble-page/marble.webp') }}"
+         alt="Marble Floor Polishing Singapore"
+         fetchpriority="high"
+         loading="eager"
+         decoding="async"
+         width="1920"
+         height="800"
+         class="marble-hero__bg">
+
+    <div class="container" style="position: relative; z-index: 1;">
         <div class="hero-badge">
             <i class="fas fa-gem"></i>
             Professional Floor Polishing — Singapore

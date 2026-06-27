@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('title', 'Granite Floor Polishing Services in Singapore | Floorshine')
-@section('meta_description', 'Professional granite floor polishing services in Singapore. We restore the lustre & beauty of your granite floors. Free quote available — call +65 8811 2999.')
-@section('meta_keywords', 'granite floor polishing singapore, granite polishing service singapore, granite floor restoration, granite polishing hdb, granite polishing condo singapore')
+@section('meta_description', 'Professional granite floor polishing services in Singapore. We restore the lustre & beauty
+    of your granite floors. Free quote available — call +65 8811 2999.')
+@section('meta_keywords', 'granite floor polishing singapore, granite polishing service singapore, granite floor
+    restoration, granite polishing hdb, granite polishing condo singapore')
 @section('og_title', 'Granite Floor Polishing Services in Singapore | Floorshine')
-@section('og_description', 'Professional granite floor polishing services in Singapore. Restoring the lustre and beauty of your granite floors. Trusted by 800+ customers. Get a free quote today!')
+@section('og_description', 'Professional granite floor polishing services in Singapore. Restoring the lustre and beauty
+    of your granite floors. Trusted by 800+ customers. Get a free quote today!')
 
 @section('schema')
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@graph": [
@@ -187,786 +190,814 @@
 }
 </script>
 @endsection
+@push('preload')
+<link rel="preload"
+      as="image"
+      href="{{ asset('images/granite-page/granite.webp') }}"
+      fetchpriority="high">
+@endpush
+@push('styles')
+    <style>
+        /* ============================================================
+                               HERO
+                               ============================================================ */
+.granite-hero {
+    padding: 80px 0 70px;
+    position: relative;
+    overflow: hidden;
+}
 
-    @push('styles')
-        <style>
-            /* ============================================================
-                           HERO
-                           ============================================================ */
-            .granite-hero {
-                padding: 80px 0 70px;
-                position: relative;
-            }
+.granite-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+        .granite-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal), #fff, var(--teal));
+        }
 
-            .granite-hero::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: linear-gradient(90deg, var(--teal), #fff, var(--teal));
-            }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #35adb5;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 12.5px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            backdrop-filter: blur(4px);
+        }
 
-            .hero-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 7px;
-                background: rgba(255, 255, 255, 0.15);
-                color: #35adb5;
-                padding: 5px 14px;
-                border-radius: 100px;
-                font-size: 12.5px;
-                font-weight: 500;
-                margin-bottom: 18px;
-                backdrop-filter: blur(4px);
-            }
+        .granite-hero h1 {
+            font-family: var(--font-head);
+            font-size: clamp(30px, 4.5vw, 54px);
+            font-weight: 800;
+            color: #35adb5;
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            max-width: 620px;
+        }
 
-            .granite-hero h1 {
-                font-family: var(--font-head);
-                font-size: clamp(30px, 4.5vw, 54px);
-                font-weight: 800;
-                color: #35adb5;
-                line-height: 1.12;
-                letter-spacing: -1.5px;
-                margin-bottom: 18px;
-                max-width: 620px;
-            }
+        .granite-hero p {
+            color: #35adb5;
+            font-size: 15.5px;
+            line-height: 1.65;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
 
-            .granite-hero p {
-                color: #35adb5;
-                font-size: 15.5px;
-                line-height: 1.65;
-                max-width: 520px;
-                margin-bottom: 28px;
-            }
+        .btn-quote-white {
+            display: inline-block;
+            background: #35adb5;
+            color: #fff;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: var(--font-head);
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        }
 
-            .btn-quote-white {
-                display: inline-block;
-                background: #35adb5;
-                color: #fff;
-                padding: 13px 30px;
-                border-radius: 8px;
-                font-size: 15px;
-                font-weight: 700;
-                font-family: var(--font-head);
-                text-decoration: none;
-                transition: all 0.2s;
-                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-            }
+        .btn-quote-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
 
-            .btn-quote-white:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            }
+        /* ============================================================
+                               COMMONS
+                               ============================================================ */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-            /* ============================================================
-                           COMMONS
-                           ============================================================ */
-            .container {
-                max-width: 1100px;
-                margin: 0 auto;
-                padding: 0 24px;
-            }
+        section {
+            padding: 72px 0;
+        }
 
-            section {
-                padding: 72px 0;
-            }
+        .sec-title {
+            font-family: var(--font-head);
+            font-size: clamp(22px, 3vw, 36px);
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
 
-            .sec-title {
-                font-family: var(--font-head);
-                font-size: clamp(22px, 3vw, 36px);
-                font-weight: 800;
-                color: var(--navy);
-                line-height: 1.2;
-                letter-spacing: -0.5px;
-                margin-bottom: 14px;
-            }
+        .sec-title-teal {
+            color: var(--teal);
+        }
 
-            .sec-title-teal {
-                color: var(--teal);
-            }
+        .sec-sub {
+            font-size: 15.5px;
+            color: var(--gray-600);
+            line-height: 1.75;
+            max-width: 700px;
+        }
 
-            .sec-sub {
-                font-size: 15.5px;
-                color: var(--gray-600);
-                line-height: 1.75;
-                max-width: 700px;
-            }
+        .text-center {
+            text-align: center;
+        }
 
-            .text-center {
-                text-align: center;
-            }
+        .gray-bg {
+            background: var(--gray-50);
+        }
 
-            .gray-bg {
-                background: var(--gray-50);
-            }
+        .navy-bg {
+            background: var(--navy);
+        }
 
-            .navy-bg {
-                background: var(--navy);
-            }
+        .white-bg {
+            background: #fff;
+        }
 
-            .white-bg {
-                background: #fff;
-            }
-
-            .green-bg {
-                background: #35adb5;
-            }
+        .green-bg {
+            background: #35adb5;
+        }
 
 
-            /* ============================================================
-                           ABOUT GRANITE
-                           ============================================================ */
-            .about-granite-grid {
-                display: grid;
-                grid-template-columns: 1fr 420px;
-                gap: 52px;
-                align-items: start;
-            }
+        /* ============================================================
+                               ABOUT GRANITE
+                               ============================================================ */
+        .about-granite-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 52px;
+            align-items: start;
+        }
 
-            .about-granite-text h2 {
-                font-family: var(--font-head);
-                font-size: 22px;
-                font-weight: 800;
-                color: #fff;
-                margin: 28px 0 14px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid var(--gray-200);
-            }
+        .about-granite-text h2 {
+            font-family: var(--font-head);
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin: 28px 0 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray-200);
+        }
 
-            .about-granite-text h2:first-child {
-                margin-top: 0;
-            }
+        .about-granite-text h2:first-child {
+            margin-top: 0;
+        }
 
-            .about-granite-text p {
-                font-size: 15px;
-                color: #fff;
-                line-height: 1.8;
-                margin-bottom: 16px;
-            }
+        .about-granite-text p {
+            font-size: 15px;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
 
-            .about-granite-text p:last-child {
-                margin-bottom: 0;
-            }
+        .about-granite-text p:last-child {
+            margin-bottom: 0;
+        }
 
-            /* Granite image panel */
-            .granite-img-panel {
-                position: sticky;
-                top: 90px;
-            }
+        /* Granite image panel */
+        .granite-img-panel {
+            position: sticky;
+            top: 90px;
+        }
 
-            .granite-img-box {
-                border-radius: 20px;
-                overflow: hidden;
-                background: var(--teal-light);
-                aspect-ratio: 4/3;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 80px;
-                color: var(--teal);
-            }
+        .granite-img-box {
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--teal-light);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: var(--teal);
+        }
+.granite-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            margin: 16px 0;
+        }
 
-            /* Bullet list */
-            .bullet-list {
-                list-style: none;
-                margin: 16px 0;
-            }
+        .bullet-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14.5px;
+            color: var(--gray-700, #374151);
+            margin-bottom: 9px;
+            line-height: 1.55;
+        }
 
-            .bullet-list li {
-                display: flex;
-                align-items: flex-start;
-                gap: 10px;
-                font-size: 14.5px;
-                color: var(--gray-700, #374151);
-                margin-bottom: 9px;
-                line-height: 1.55;
-            }
+        .bullet-list li::before {
+            content: '▸';
+            color: var(--teal);
+            font-size: 13px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
 
-            .bullet-list li::before {
-                content: '▸';
-                color: var(--teal);
-                font-size: 13px;
-                margin-top: 2px;
-                flex-shrink: 0;
-            }
+        /* ============================================================
+                               WHY GRANITE NEEDS POLISH
+                               ============================================================ */
+        .why-polish-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 52px;
+            align-items: start;
+        }
 
-            /* ============================================================
-                           WHY GRANITE NEEDS POLISH
-                           ============================================================ */
-            .why-polish-grid {
-                display: grid;
-                grid-template-columns: 1fr 380px;
-                gap: 52px;
-                align-items: start;
-            }
+        .why-polish-img {
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--teal-light);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: var(--teal);
 
-            .why-polish-img {
-                border-radius: 20px;
-                overflow: hidden;
-                background: var(--teal-light);
-                aspect-ratio: 4/3;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 80px;
-                color: var(--teal);
+        }
 
-            }
+        /* ============================================================
+                       PROCESS SECTION
+                       ============================================================ */
 
-            /* ============================================================
-                   PROCESS SECTION
-                   ============================================================ */
+        .process-section {
+            background: #ffffff;
+            padding: 0 0 60px;
+        }
 
-            .process-section {
-                background: #ffffff;
-                padding: 0 0 60px;
-            }
+        .process-section-header {
+            background: #2BBFBF;
+            padding: 18px 24px;
+            text-align: center;
+            margin-bottom: 0;
+        }
 
-            .process-section-header {
-                background: #2BBFBF;
-                padding: 18px 24px;
-                text-align: center;
-                margin-bottom: 0;
-            }
+        .process-section-header .sec-title {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0;
+        }
 
-            .process-section-header .sec-title {
-                color: #ffffff;
-                font-size: 26px;
-                font-weight: 700;
-                margin: 0;
-            }
+        .sec-sub {
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.75;
+            max-width: 720px;
+            margin: 0 auto 10px;
+            text-align: center;
+        }
 
-            .sec-sub {
-                font-size: 15px;
-                color: #444444;
-                line-height: 1.75;
-                max-width: 720px;
-                margin: 0 auto 10px;
-                text-align: center;
-            }
+        .sec-sub2 {
+            font-size: 14px;
+            color: #666666;
+            margin: 0 auto 0;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.7;
+        }
 
-            .sec-sub2 {
-                font-size: 14px;
-                color: #666666;
-                margin: 0 auto 0;
-                max-width: 600px;
-                text-align: center;
-                line-height: 1.7;
-            }
+        .process-intro-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 48px;
+            align-items: start;
+            margin-top: 36px;
+        }
 
+        .process-img-box {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+
+        .process-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .process-steps-wrap h3 {
+            font-family: var(--font-head);
+            font-size: 17px;
+            font-weight: 700;
+            color: #E5A800;
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            margin-bottom: 18px;
+        }
+
+        .ps-body h4 {
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 700;
+            color: #35adb5;
+            margin-bottom: 5px;
+        }
+
+        .ps-body p {
+            font-size: 13.5px;
+            color: #35adb5;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+                       RESPONSIVE
+                       ============================================================ */
+
+        @media (max-width: 768px) {
             .process-intro-grid {
-                display: grid;
-                grid-template-columns: 300px 1fr;
-                gap: 48px;
-                align-items: start;
-                margin-top: 36px;
+                grid-template-columns: 1fr;
+                gap: 28px;
             }
 
             .process-img-box {
-                border-radius: 12px;
-                overflow: hidden;
-                aspect-ratio: 4/5;
+                aspect-ratio: 16/9;
             }
 
-            .process-img-box img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
+            .process-section-header .sec-title {
+                font-size: 20px;
             }
+        }
 
-            .process-steps-wrap h3 {
-                font-family: var(--font-head);
-                font-size: 17px;
-                font-weight: 700;
-                color: #E5A800;
-                margin-bottom: 20px;
-            }
+        /* ============================================================
+                               3 STEPS CTA
+                               ============================================================ */
+        .steps-cta-section {
+            background: var(--gray-50);
+        }
 
-            .process-step {
-                margin-bottom: 18px;
-            }
+        .steps-cta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 44px;
+        }
 
-            .ps-body h4 {
-                font-family: var(--font-head);
-                font-size: 14px;
-                font-weight: 700;
-                color: #35adb5;
-                margin-bottom: 5px;
-            }
+        .step-cta-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 22px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
 
-            .ps-body p {
-                font-size: 13.5px;
-                color: #35adb5;
-                line-height: 1.7;
-                margin: 0;
-            }
+        .step-cta-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(29, 187, 164, 0.12);
+        }
 
-            /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
+        .step-cta-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--teal-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 28px;
+            color: var(--teal);
+            transition: all 0.2s;
+        }
 
-            @media (max-width: 768px) {
-                .process-intro-grid {
-                    grid-template-columns: 1fr;
-                    gap: 28px;
-                }
+        .step-cta-card:hover .step-cta-icon {
+            background: var(--teal);
+            color: #fff;
+        }
 
-                .process-img-box {
-                    aspect-ratio: 16/9;
-                }
+        .step-cta-card h3 {
+            font-family: var(--font-head);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+        }
 
-                .process-section-header .sec-title {
-                    font-size: 20px;
-                }
-            }
+        .btn-wa-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: var(--teal);
+            color: #fff;
+            padding: 13px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: var(--font-head);
+            margin-top: 40px;
+            transition: background 0.2s;
+        }
 
-            /* ============================================================
-                           3 STEPS CTA
-                           ============================================================ */
-            .steps-cta-section {
-                background: var(--gray-50);
-            }
+        .btn-wa-cta:hover {
+            background: var(--teal-dark);
+            color: #fff;
+        }
 
-            .steps-cta-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+        /* ============================================================
+               COMBINED SECTION (OFFER + MAINTENANCE)
+               ============================================================ */
+
+        .combined-section {
+            background: #ffffff;
+            padding: 52px 0;
+        }
+
+        /* Shared heading style */
+        .offer-text h2,
+        .maint-text h2 {
+            font-family: var(--font-head);
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-weight: 800;
+            color: #2BBFBF;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        /* Gold underline */
+        .section-underline {
+            width: 80px;
+            height: 3px;
+            background: #E5A800;
+            border-radius: 2px;
+            margin-bottom: 18px;
+        }
+
+        /* Divider between blocks */
+        .section-divider {
+            border: none;
+            border-top: 1px solid #eeeeee;
+            margin: 40px 0;
+        }
+
+        /* ── OFFER BLOCK ── */
+        .offer-block {
+            margin-bottom: 0;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .offer-text p {
+            font-size: 14.5px;
+            color: #444444;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .simple-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+        }
+
+        .simple-bullet-list li {
+            font-size: 14.5px;
+            color: #444444;
+            padding: 3px 0 3px 16px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .simple-bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #444444;
+        }
+
+        .offer-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offer-img img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        /* ── MAINTENANCE BLOCK ── */
+        .maint-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .maint-text p {
+            font-size: 14.5px;
+            color: #444444;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .maint-tips-label {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #2BBFBF !important;
+            margin-bottom: 8px !important;
+        }
+
+        .maint-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+        }
+
+        .maint-bullet-list li {
+            font-size: 14.5px;
+            color: #444444;
+            padding: 3px 0 3px 18px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .maint-bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2BBFBF;
+        }
+
+        .maint-footer-text {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.75;
+            margin-top: 14px !important;
+        }
+
+        .maint-img-box {
+            border-radius: 12px;
+            overflow: hidden;
+            position: sticky;
+            top: 90px;
+        }
+
+        .maint-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+
+            .offer-grid,
+            .maint-grid {
+                grid-template-columns: 1fr;
                 gap: 24px;
-                margin-top: 44px;
-            }
-
-            .step-cta-card {
-                background: #fff;
-                border-radius: 16px;
-                padding: 32px 22px;
-                text-align: center;
-                border: 1px solid var(--gray-200);
-                transition: all 0.2s;
-            }
-
-            .step-cta-card:hover {
-                border-color: var(--teal);
-                transform: translateY(-4px);
-                box-shadow: 0 10px 28px rgba(29, 187, 164, 0.12);
-            }
-
-            .step-cta-icon {
-                width: 70px;
-                height: 70px;
-                background: var(--teal-light);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto 18px;
-                font-size: 28px;
-                color: var(--teal);
-                transition: all 0.2s;
-            }
-
-            .step-cta-card:hover .step-cta-icon {
-                background: var(--teal);
-                color: #fff;
-            }
-
-            .step-cta-card h3 {
-                font-family: var(--font-head);
-                font-size: 15px;
-                font-weight: 700;
-                color: var(--navy);
-            }
-
-            .btn-wa-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 9px;
-                background: var(--teal);
-                color: #fff;
-                padding: 13px 32px;
-                border-radius: 50px;
-                text-decoration: none;
-                font-size: 15px;
-                font-weight: 700;
-                font-family: var(--font-head);
-                margin-top: 40px;
-                transition: background 0.2s;
-            }
-
-            .btn-wa-cta:hover {
-                background: var(--teal-dark);
-                color: #fff;
-            }
-
-            /* ============================================================
-           COMBINED SECTION (OFFER + MAINTENANCE)
-           ============================================================ */
-
-            .combined-section {
-                background: #ffffff;
-                padding: 52px 0;
-            }
-
-            /* Shared heading style */
-            .offer-text h2,
-            .maint-text h2 {
-                font-family: var(--font-head);
-                font-size: clamp(20px, 2.5vw, 28px);
-                font-weight: 800;
-                color: #2BBFBF;
-                line-height: 1.25;
-                margin-bottom: 8px;
-            }
-
-            /* Gold underline */
-            .section-underline {
-                width: 80px;
-                height: 3px;
-                background: #E5A800;
-                border-radius: 2px;
-                margin-bottom: 18px;
-            }
-
-            /* Divider between blocks */
-            .section-divider {
-                border: none;
-                border-top: 1px solid #eeeeee;
-                margin: 40px 0;
-            }
-
-            /* ── OFFER BLOCK ── */
-            .offer-block {
-                margin-bottom: 0;
-            }
-
-            .offer-grid {
-                display: grid;
-                grid-template-columns: 1fr 200px;
-                gap: 40px;
-                align-items: center;
-            }
-
-            .offer-text p {
-                font-size: 14.5px;
-                color: #444444;
-                line-height: 1.8;
-                margin-bottom: 10px;
-            }
-
-            .simple-bullet-list {
-                list-style: none;
-                padding: 0;
-                margin: 8px 0 0;
-            }
-
-            .simple-bullet-list li {
-                font-size: 14.5px;
-                color: #444444;
-                padding: 3px 0 3px 16px;
-                position: relative;
-                line-height: 1.7;
-            }
-
-            .simple-bullet-list li::before {
-                content: '•';
-                position: absolute;
-                left: 0;
-                color: #444444;
             }
 
             .offer-img {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                order: -1;
             }
 
             .offer-img img {
-                width: 100%;
-                max-width: 180px;
-                height: auto;
-                object-fit: contain;
-                border-radius: 10px;
-            }
-
-            /* ── MAINTENANCE BLOCK ── */
-            .maint-grid {
-                display: grid;
-                grid-template-columns: 1fr 300px;
-                gap: 40px;
-                align-items: start;
-            }
-
-            .maint-text p {
-                font-size: 14.5px;
-                color: #444444;
-                line-height: 1.8;
-                margin-bottom: 12px;
-            }
-
-            .maint-tips-label {
-                font-size: 14.5px;
-                font-weight: 700;
-                color: #2BBFBF !important;
-                margin-bottom: 8px !important;
-            }
-
-            .maint-bullet-list {
-                list-style: none;
-                padding: 0;
-                margin: 0 0 14px;
-            }
-
-            .maint-bullet-list li {
-                font-size: 14.5px;
-                color: #444444;
-                padding: 3px 0 3px 18px;
-                position: relative;
-                line-height: 1.7;
-            }
-
-            .maint-bullet-list li::before {
-                content: '•';
-                position: absolute;
-                left: 0;
-                color: #2BBFBF;
-            }
-
-            .maint-footer-text {
-                font-size: 14px;
-                color: #666666;
-                line-height: 1.75;
-                margin-top: 14px !important;
+                max-width: 140px;
             }
 
             .maint-img-box {
-                border-radius: 12px;
-                overflow: hidden;
-                position: sticky;
-                top: 90px;
+                position: static;
+                height: 220px;
+            }
+        }
+
+        /* ============================================================
+                               FAQ
+                               ============================================================ */
+        .faq-section {
+            background: #fff;
+        }
+
+        .faq-section .sec-title span {
+            color: var(--teal);
+        }
+
+        .faq-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item.open {
+            border-color: var(--teal);
+            background: #fff;
+        }
+
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 18px 20px;
+            cursor: pointer;
+            font-family: var(--font-head);
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--navy);
+            user-select: none;
+            line-height: 1.4;
+        }
+
+        .faq-q i {
+            color: var(--teal);
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 4px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-q i {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            display: none;
+            padding: 0 20px 18px;
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.75;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 14px;
+        }
+
+        .faq-item.open .faq-a {
+            display: block;
+        }
+
+        /* ============================================================
+                               OTHER SERVICES
+                               ============================================================ */
+        .other-services-section {
+            background: #fff;
+            padding: 56px 0;
+        }
+
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        .os-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 22px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            display: block;
+        }
+
+        .os-card:hover {
+            border-color: var(--teal);
+            background: var(--teal-light);
+            transform: translateY(-3px);
+        }
+
+        .os-icon {
+            font-size: 28px;
+            color: var(--teal);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .os-card h4 {
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.35;
+        }
+
+        /* ============================================================
+                               RESPONSIVE
+                               ============================================================ */
+        @media (max-width: 1024px) {
+
+            .about-granite-grid,
+            .why-polish-grid,
+            .process-intro-grid,
+            .offer-grid,
+            .maint-grid {
+                grid-template-columns: 1fr;
             }
 
-            .maint-img-box img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
+            .granite-img-panel,
+            .maint-img-box {
+                position: static;
             }
 
-            /* ── RESPONSIVE ── */
-            @media (max-width: 768px) {
-
-                .offer-grid,
-                .maint-grid {
-                    grid-template-columns: 1fr;
-                    gap: 24px;
-                }
-
-                .offer-img {
-                    order: -1;
-                }
-
-                .offer-img img {
-                    max-width: 140px;
-                }
-
-                .maint-img-box {
-                    position: static;
-                    height: 220px;
-                }
+            .why-polish-img {
+                order: -1;
             }
 
-            /* ============================================================
-                           FAQ
-                           ============================================================ */
-            .faq-section {
-                background: #fff;
-            }
-
-            .faq-section .sec-title span {
-                color: var(--teal);
-            }
-
-            .faq-cols {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                margin-top: 40px;
-            }
-
-            .faq-item {
-                background: var(--gray-50);
-                border: 1px solid var(--gray-200);
-                border-radius: 12px;
-                overflow: hidden;
-                transition: border-color 0.2s;
-            }
-
-            .faq-item.open {
-                border-color: var(--teal);
-                background: #fff;
-            }
-
-            .faq-q {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 12px;
-                padding: 18px 20px;
-                cursor: pointer;
-                font-family: var(--font-head);
-                font-size: 14.5px;
-                font-weight: 600;
-                color: var(--navy);
-                user-select: none;
-                line-height: 1.4;
-            }
-
-            .faq-q i {
-                color: var(--teal);
-                font-size: 12px;
-                flex-shrink: 0;
-                margin-top: 4px;
-                transition: transform 0.3s;
-            }
-
-            .faq-item.open .faq-q i {
-                transform: rotate(180deg);
-            }
-
-            .faq-a {
+            .offer-img {
                 display: none;
-                padding: 0 20px 18px;
-                font-size: 14px;
-                color: var(--gray-600);
-                line-height: 1.75;
-                border-top: 1px solid var(--gray-200);
-                padding-top: 14px;
-            }
-
-            .faq-item.open .faq-a {
-                display: block;
-            }
-
-            /* ============================================================
-                           OTHER SERVICES
-                           ============================================================ */
-            .other-services-section {
-                background: #fff;
-                padding: 56px 0;
             }
 
             .os-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 16px;
-                margin-top: 36px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .steps-cta-grid {
+                grid-template-columns: 1fr;
             }
 
-            .os-card {
-                background: var(--gray-50);
-                border: 1px solid var(--gray-200);
-                border-radius: 14px;
-                padding: 22px 18px;
-                text-align: center;
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.2s;
-                display: block;
+            .faq-cols {
+                grid-template-columns: 1fr;
             }
 
-            .os-card:hover {
-                border-color: var(--teal);
-                background: var(--teal-light);
-                transform: translateY(-3px);
+            .contact-bottom-grid {
+                grid-template-columns: 1fr;
             }
 
-            .os-icon {
-                font-size: 28px;
-                color: var(--teal);
-                margin-bottom: 10px;
-                display: block;
+            .process-img-box {
+                display: none;
             }
-
-            .os-card h4 {
-                font-family: var(--font-head);
-                font-size: 13.5px;
-                font-weight: 700;
-                color: var(--navy);
-                line-height: 1.35;
-            }
-
-            /* ============================================================
-                           RESPONSIVE
-                           ============================================================ */
-            @media (max-width: 1024px) {
-
-                .about-granite-grid,
-                .why-polish-grid,
-                .process-intro-grid,
-                .offer-grid,
-                .maint-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .granite-img-panel,
-                .maint-img-box {
-                    position: static;
-                }
-
-                .why-polish-img {
-                    order: -1;
-                }
-
-                .offer-img {
-                    display: none;
-                }
-
-                .os-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-
-            @media (max-width: 768px) {
-                .steps-cta-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .faq-cols {
-                    grid-template-columns: 1fr;
-                }
-
-                .contact-bottom-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .process-img-box {
-                    display: none;
-                }
-            }
-        </style>
-    @endpush
+        }
+    </style>
+@endpush
 
 @section('content')
 
     {{-- ============================================================
      HERO
      ============================================================ --}}
-    <section class="granite-hero"
-        style="background: url('{{ asset('images/granite-page/granite.webp') }}') center/cover no-repeat;">>
+<section class="granite-hero">
 
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fas fa-mountain"></i>
-                Professional Floor Polishing — Singapore
-            </div>
-            <h1>Granite Floor Polishing<br>Services in Singapore</h1>
-            <strong>
-                <p>Professional Granite Floor Polishing Service | Restoring The Lustre and Beauty of Your Granite</p>
-            </strong>
-            <a href="#quote" class="btn-quote-white">Get A Quote</a>
+    <img src="{{ asset('images/granite-page/granite.webp') }}"
+         alt="Granite Floor Polishing Singapore"
+         fetchpriority="high"
+         loading="eager"
+         decoding="async"
+         width="1920"
+         height="800"
+         class="granite-hero__bg">
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="hero-badge">
+            <i class="fas fa-mountain"></i>
+            Professional Floor Polishing — Singapore
         </div>
-    </section>
+        <h1>Granite Floor Polishing<br>Services in Singapore</h1>
+        <strong>
+            <p>Professional Granite Floor Polishing Service | Restoring The Lustre and Beauty of Your Granite</p>
+        </strong>
+        <a href="#quote" class="btn-quote-white">Get A Quote</a>
+    </div>
+</section>
 
     {{-- ============================================================
      ABOUT GRANITE + GRANITE POLISHING
@@ -997,9 +1028,9 @@
                 </div>
 
                 <div class="granite-img-panel">
-
                     <div class="granite-img-box">
-                        <img src="{{ asset('images/granite-page/granite-room.webp') }}" alt="granite Floor">
+                        <img src="{{ asset('images/granite-page/granite-room.webp') }}" alt="Granite Floor"
+                            fetchpriority="high" loading="eager" decoding="async" width="4" height="3">
                     </div>
                 </div>
             </div>
